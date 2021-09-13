@@ -4,24 +4,12 @@
 !/html/wp-content
 /html/wp-content/*
 !/html/wp-content/plugins
-!/html/wp-content/plugins
-/html/wp-content/plugins/hello.php
-/html/wp-content/plugins/index.php
-/html/wp-content/plugins/akismet.php
-/html/wp-content/plugins/calculated-fields-form.php
-/html/wp-content/plugins/donorbox-donation-form.php
-/html/wp-content/plugins/forminator.php
-/html/wp-content/plugins/woocommerce.php
-/html/wp-content/plugins/woocommerce-mercadopago.php
-
+/html/wp-content/plugins/*
+!/html/wp-content/plugins/wordpressProject
 /logs/*
-
-# /html/wp-content/plugins/*
-# !/html/wp-content/plugins/proyectowp
 
 
 #mysql
 /php-playground/*
 !/php-playground/hola.php
 !/php-playground/index.html
-
