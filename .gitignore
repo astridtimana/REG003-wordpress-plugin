@@ -6,6 +6,7 @@
 
 /logs/*
 
+# /html/wp-content/plugins/*
 
 
 #mysql
