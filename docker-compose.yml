@@ -19,6 +19,7 @@ services:
       - db
     image: wordpress:latest
     volumes:
+      - ./logs:/var/log/apache2
       - ./html:/var/www/html
       - ./php-playground:/var/www/php-playground
       - ./apache2/ports.conf:/etc/apache2/ports.conf
