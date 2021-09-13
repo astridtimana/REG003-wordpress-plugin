@@ -4,11 +4,6 @@
 
 
 
-/logs/*
-
-# /html/wp-content/plugins/*
-
-
 #mysql
 /php-playground/*
 !/php-playground/hola.php
