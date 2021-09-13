@@ -1,16 +1,14 @@
 #html
 /html/*
-/html/.keep
+!/html/.keep
 !/html/wp-content
 /html/wp-content/*
 !/html/wp-content/plugins
-!/html/wp-content/plugins/proyectowp
-!/html/wp-content/plugins/proyectowp
+# /html/wp-content/plugins/*
+# !/html/wp-content/plugins/proyectowp
 
-/logs/*
 
 #mysql
 /php-playground/*
 !/php-playground/hola.php
 !/php-playground/index.html
-
