@@ -1,9 +1,15 @@
 #html
 /html/*
 !/html/.keep
+!/html/wp-content
+/html/wp-content/*
 !/html/wp-content/plugins
+/html/wp-content/plugins/*
+!/html/wp-content/plugins/proyectowp
+
 
 #mysql
 /php-playground/*
 !/php-playground/hola.php
 !/php-playground/index.html
+
