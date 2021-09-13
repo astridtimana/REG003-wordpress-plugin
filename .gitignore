@@ -1,4 +1,5 @@
 #html
+/logs/*
 /html/*
 !/html/.keep
 !/html/wp-content
