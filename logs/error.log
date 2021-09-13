@@ -1,0 +1,95 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Fri Sep 10 15:22:36.051119 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.48 (Debian) PHP/7.4.23 configured -- resuming normal operations
+[Fri Sep 10 15:22:36.051248 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Sep 10 15:28:52.496752 2021] [php7:error] [pid 21] [client 172.18.0.1:34026] PHP Parse error:  syntax error, unexpected ''/packages/woocommerce' (T_ENCAPSED_AND_WHITESPACE) in /var/www/html/wp-content/plugins/woocommerce/vendor/composer/jetpack_autoload_classmap.php on line 1355, referer: http://localhost/wp-admin/plugins.php
+[Fri Sep 10 15:28:52.776780 2021] [php7:error] [pid 21] [client 172.18.0.1:34026] PHP Parse error:  syntax error, unexpected ''/packages/woocommerce' (T_ENCAPSED_AND_WHITESPACE) in /var/www/html/wp-content/plugins/woocommerce/vendor/composer/jetpack_autoload_classmap.php on line 1355, referer: http://localhost/wp-admin/plugins.php?plugin=woocommerce%2Fwoocommerce.php
+[Fri Sep 10 15:28:52.862031 2021] [php7:error] [pid 21] [client 172.18.0.1:34026] PHP Parse error:  syntax error, unexpected ''/packages/woocommerce' (T_ENCAPSED_AND_WHITESPACE) in /var/www/html/wp-content/plugins/woocommerce/vendor/composer/jetpack_autoload_classmap.php on line 1355, referer: http://localhost/wp-admin/plugins.php?plugin=woocommerce%2Fwoocommerce.php
+[Fri Sep 10 15:28:59.220203 2021] [php7:error] [pid 27] [client 172.18.0.1:34050] PHP Parse error:  syntax error, unexpected ''/packages/woocommerce' (T_ENCAPSED_AND_WHITESPACE) in /var/www/html/wp-content/plugins/woocommerce/vendor/composer/jetpack_autoload_classmap.php on line 1355, referer: http://localhost/wp-admin/plugins.php?plugin=woocommerce%2Fwoocommerce.php
+[Fri Sep 10 15:28:59.405300 2021] [php7:error] [pid 27] [client 172.18.0.1:34050] PHP Parse error:  syntax error, unexpected ''/packages/woocommerce' (T_ENCAPSED_AND_WHITESPACE) in /var/www/html/wp-content/plugins/woocommerce/vendor/composer/jetpack_autoload_classmap.php on line 1355, referer: http://localhost/wp-admin/plugins.php?plugin=woocommerce%2Fwoocommerce.php
+[Fri Sep 10 15:28:59.454445 2021] [php7:error] [pid 27] [client 172.18.0.1:34050] PHP Parse error:  syntax error, unexpected ''/packages/woocommerce' (T_ENCAPSED_AND_WHITESPACE) in /var/www/html/wp-content/plugins/woocommerce/vendor/composer/jetpack_autoload_classmap.php on line 1355, referer: http://localhost/wp-admin/plugins.php?plugin=woocommerce%2Fwoocommerce.php
+[Fri Sep 10 15:31:31.148313 2021] [php7:notice] [pid 21] [client 172.18.0.1:34116] WordPress database error Table 'wordpress.wp_wc_webhooks' doesn't exist for query SELECT webhook_id\n\t\t\t\tFROM wp_wc_webhooks\n\t\t\t\tWHERE 1=1\n\t\t\t\tAND `status` = 'active'\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\tORDER BY webhook_id DESC made by require_once('wp-admin/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, WooCommerce->init, WooCommerce->load_webhooks, wc_load_webhooks, WC_Data_Store->__call, WC_Webhook_Data_Store->get_webhooks_ids, WC_Webhook_Data_Store->search_webhooks, referer: http://localhost/wp-admin/
+[Sat Sep 11 00:24:50.893550 2021] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Sun Sep 12 23:25:55.296049 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.48 (Debian) PHP/7.4.23 configured -- resuming normal operations
+[Sun Sep 12 23:25:55.296136 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Sep 13 01:06:44.277607 2021] [php7:error] [pid 21] [client 172.18.0.1:35350] PHP Parse error:  syntax error, unexpected 'error_log' (T_STRING) in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:07:12.664359 2021] [php7:notice] [pid 23] [client 172.18.0.1:35368] name, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:07:37.160647 2021] [php7:notice] [pid 20] [client 172.18.0.1:35374] name, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:07:37.160780 2021] [php7:error] [pid 20] [client 172.18.0.1:35374] PHP Fatal error:  Uncaught Error: Call to undefined function console_log() in /var/www/php-playground/hola.php:10\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 10, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:21:00.065013 2021] [php7:notice] [pid 19] [client 172.18.0.1:35402] name, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:21:03.457935 2021] [php7:notice] [pid 24] [client 172.18.0.1:35416] name, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:21:20.136884 2021] [php7:notice] [pid 21] [client 172.18.0.1:35428] name, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:30:44.320243 2021] [php7:notice] [pid 20] [client 172.18.0.1:35440] soy carla , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:30:59.375126 2021] [php7:notice] [pid 60] [client 172.18.0.1:35452] soy mery , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:31:33.787942 2021] [php7:notice] [pid 19] [client 172.18.0.1:35464] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:34:34.438547 2021] [php7:notice] [pid 24] [client 172.18.0.1:35482] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:34:34.438712 2021] [php7:error] [pid 24] [client 172.18.0.1:35482] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:10\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 10, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:35:07.539999 2021] [php7:error] [pid 23] [client 172.18.0.1:35488] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:35:23.899960 2021] [php7:error] [pid 20] [client 172.18.0.1:35500] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:36:18.492426 2021] [php7:error] [pid 60] [client 172.18.0.1:35518] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:37:05.054607 2021] [php7:error] [pid 19] [client 172.18.0.1:35530] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:37:09.937617 2021] [php7:error] [pid 19] [client 172.18.0.1:35530] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:37:10.973572 2021] [php7:error] [pid 19] [client 172.18.0.1:35530] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:37:11.871398 2021] [php7:error] [pid 19] [client 172.18.0.1:35530] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:37:25.561716 2021] [php7:error] [pid 24] [client 172.18.0.1:35542] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:37:35.804289 2021] [php7:error] [pid 23] [client 172.18.0.1:35548] PHP Fatal error:  Uncaught Error: Call to undefined function acces_log() in /var/www/php-playground/hola.php:9\nStack trace:\n#0 {main}\n  thrown in /var/www/php-playground/hola.php on line 9, referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:38:10.001208 2021] [php7:notice] [pid 20] [client 172.18.0.1:35560] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:38:13.716982 2021] [php7:notice] [pid 32] [client 172.18.0.1:35576] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:38:45.339734 2021] [php7:notice] [pid 19] [client 172.18.0.1:35584] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:39:15.814489 2021] [php7:notice] [pid 24] [client 172.18.0.1:35600] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:39:18.016367 2021] [php7:notice] [pid 24] [client 172.18.0.1:35600] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 01:57:55.470063 2021] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Mon Sep 13 14:21:44.420508 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.48 (Debian) PHP/7.4.23 configured -- resuming normal operations
+[Mon Sep 13 14:21:44.420715 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Sep 13 14:38:07.549346 2021] [php7:notice] [pid 20] [client 172.18.0.1:55622] 1
+[Mon Sep 13 14:38:15.371209 2021] [php7:notice] [pid 27] [client 172.18.0.1:55664] 1, referer: http://localhost/
+[Mon Sep 13 14:38:23.813835 2021] [php7:notice] [pid 34] [client 172.18.0.1:48810] soy xdxd , referer: http://localhost:8080/
+[Mon Sep 13 14:38:30.659370 2021] [php7:notice] [pid 24] [client 172.18.0.1:48834] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:40:25.754348 2021] [php7:notice] [pid 23] [client 172.18.0.1:48854] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:41:51.424146 2021] [php7:notice] [pid 20] [client 172.18.0.1:48870] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:45:37.402434 2021] [php7:notice] [pid 22] [client 172.18.0.1:48882] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:46:13.502633 2021] [php7:notice] [pid 35] [client 172.18.0.1:48896] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:47:43.625618 2021] [php7:notice] [pid 25] [client 172.18.0.1:48902] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:48:58.614926 2021] [php7:notice] [pid 23] [client 172.18.0.1:48922] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:51:12.228555 2021] [php7:notice] [pid 20] [client 172.18.0.1:48930] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:51:38.681990 2021] [php7:notice] [pid 27] [client 172.18.0.1:48936] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:51:48.045979 2021] [php7:notice] [pid 22] [client 172.18.0.1:48942] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:51:54.519758 2021] [php7:notice] [pid 34] [client 172.18.0.1:48948] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:52:11.820546 2021] [php7:notice] [pid 35] [client 172.18.0.1:48954] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:52:37.416867 2021] [php7:notice] [pid 36] [client 172.18.0.1:48960] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:53:16.324058 2021] [php7:notice] [pid 24] [client 172.18.0.1:48972] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:53:24.493039 2021] [php7:notice] [pid 23] [client 172.18.0.1:48978] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:53:35.599095 2021] [php7:notice] [pid 21] [client 172.18.0.1:48984] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:53:49.632363 2021] [php7:notice] [pid 20] [client 172.18.0.1:48990] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:54:31.747334 2021] [php7:notice] [pid 27] [client 172.18.0.1:48996] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:55:08.177653 2021] [php7:notice] [pid 22] [client 172.18.0.1:49002] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:55:28.657384 2021] [php7:notice] [pid 34] [client 172.18.0.1:49010] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:55:40.439846 2021] [php7:notice] [pid 35] [client 172.18.0.1:49016] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 14:55:59.077444 2021] [php7:notice] [pid 36] [client 172.18.0.1:49022] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 15:02:01.333583 2021] [php7:notice] [pid 24] [client 172.18.0.1:55926] 1
+[Mon Sep 13 15:02:02.782194 2021] [php7:notice] [pid 24] [client 172.18.0.1:55926] 1, referer: http://localhost/
+[Mon Sep 13 15:03:53.472297 2021] [php7:notice] [pid 34] [client 172.18.0.1:56032] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:04:22.559042 2021] [php7:notice] [pid 20] [client 172.18.0.1:56040] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:04:26.879958 2021] [php7:notice] [pid 20] [client 172.18.0.1:56040] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:04:32.374369 2021] [php7:notice] [pid 23] [client 172.18.0.1:56050] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:05:21.043470 2021] [php7:notice] [pid 25] [client 172.18.0.1:56068] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:05:32.751140 2021] [php7:error] [pid 35] [client 172.18.0.1:56076] PHP Parse error:  syntax error, unexpected ',' in /var/www/html/wp-content/plugins/donorbox-donation-form/donorbox_embed_campaign.php on line 60, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:05:33.198131 2021] [php7:notice] [pid 22] [client 172.18.0.1:56090] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:05:33.228621 2021] [php7:error] [pid 22] [client 172.18.0.1:56090] PHP Parse error:  syntax error, unexpected ',' in /var/www/html/wp-content/plugins/donorbox-donation-form/donorbox_embed_campaign.php on line 60, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:05:38.184532 2021] [php7:notice] [pid 27] [client 172.18.0.1:56106] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:05:47.295566 2021] [php7:notice] [pid 24] [client 172.18.0.1:56100] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:05:50.162325 2021] [php7:notice] [pid 24] [client 172.18.0.1:56100] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:06:12.308232 2021] [php7:error] [pid 34] [client 172.18.0.1:56116] PHP Fatal error:  Uncaught Error: Call to undefined method Donorbox_donation_form::donorbox_add_menu_page() in /var/www/html/wp-content/plugins/donorbox-donation-form/donorbox_embed_campaign.php:89\nStack trace:\n#0 /var/www/html/wp-includes/class-wp-hook.php(303): donorbox_add_options_page_function('')\n#1 /var/www/html/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)\n#2 /var/www/html/wp-includes/plugin.php(470): WP_Hook->do_action(Array)\n#3 /var/www/html/wp-admin/includes/menu.php(155): do_action('admin_menu', '')\n#4 /var/www/html/wp-admin/menu.php(341): require_once('/var/www/html/w...')\n#5 /var/www/html/wp-admin/admin.php(158): require('/var/www/html/w...')\n#6 /var/www/html/wp-admin/options-general.php(10): require_once('/var/www/html/w...')\n#7 {main}\n  thrown in /var/www/html/wp-content/plugins/donorbox-donation-form/donorbox_embed_campaign.php on line 89, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:06:12.621468 2021] [php7:notice] [pid 20] [client 172.18.0.1:56130] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:06:19.122894 2021] [php7:notice] [pid 23] [client 172.18.0.1:56148] 1, referer: http://localhost/wp-admin/options-general.php?page=donorbox-donation-form%2Fdonorbox_embed_campaign.php
+[Mon Sep 13 15:52:53.523109 2021] [php7:notice] [pid 34] [client 172.18.0.1:49494] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:01:17.045406 2021] [php7:notice] [pid 20] [client 172.18.0.1:49510] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:11:08.505420 2021] [php7:notice] [pid 23] [client 172.18.0.1:49522] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:11:17.524883 2021] [php7:error] [pid 35] [client 172.18.0.1:49524] script '/var/www/php-playground/accion.php' not found or unable to stat, referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:11:58.848737 2021] [php7:notice] [pid 22] [client 172.18.0.1:49530] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:12:31.487562 2021] [php7:notice] [pid 24] [client 172.18.0.1:49544] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:12:35.114974 2021] [php7:notice] [pid 24] [client 172.18.0.1:49544] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:15:09.554827 2021] [php7:error] [pid 25] [client 172.18.0.1:49558] script '/var/www/php-playground/accion.php' not found or unable to stat, referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:16:12.179139 2021] [php7:notice] [pid 35] [client 172.18.0.1:49588] soy xdxd , referer: http://localhost:8080/hola.php
+[Mon Sep 13 16:27:53.674238 2021] [php7:notice] [pid 20] [client 172.18.0.1:49684] soy xdxd , referer: http://localhost:8080/hola.php
