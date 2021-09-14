@@ -1,11 +1,14 @@
 #html
+/logs/*
 /html/*
 !/html/.keep
 !/html/wp-content
 /html/wp-content/*
 !/html/wp-content/plugins
-# /html/wp-content/plugins/*
-# !/html/wp-content/plugins/proyectowp
+/html/wp-content/plugins/*
+!/html/wp-content/plugins/wordpressProject
+/logs
+
 
 
 #mysql
