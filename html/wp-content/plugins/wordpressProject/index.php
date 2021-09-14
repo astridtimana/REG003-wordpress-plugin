@@ -36,4 +36,24 @@ function CrearMenu(){
 function ShowContent(){
     echo "<h1>Instrucciones de donación</h1>";
 }
+
+
+add_shortcode('cn-ebook' ,'cn_mostrar_ebook');
+function cn_mostrar_ebook( $atts ){
+    $output = '( si deseas aprender má sobre este tema,
+                <a href="#">puedes revisar este ebook</a>)';
+    return $output;
+};
+
+add_shortcode('cn-button' ,'cn_mostrar_button');
+function cn_mostrar_button( $atts ){
+    $output = '( <form action="accion.php" method="post">
+                    <button> Presiona aquí</button>
+                </form>
+                )';
+    return $output;
+};
+
+
+
 ?>
