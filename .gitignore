@@ -1,15 +1,15 @@
 #html
-/logs/*
 /html/*
 !/html/.keep
 !/html/wp-content
 /html/wp-content/*
 !/html/wp-content/plugins
-# /html/wp-content/plugins/*
-# !/html/wp-content/plugins/proyectowp
+/html/wp-content/plugins/*
+!/html/wp-content/plugins/wordpressProject
 
+#logs
+/logs/*
 
+/logs/*
 #mysql
 /php-playground/*
-!/php-playground/hola.php
-!/php-playground/index.html
