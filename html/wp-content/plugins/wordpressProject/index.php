@@ -34,9 +34,15 @@ function CrearMenu(){
 }
 
 function ShowContent(){
-    echo "<h1>Instrucciones de donación</h1>";
+    echo "
+        <h1>Instrucciones de donación</h1>
+        <form action='accion.php' method='post'>
+        <p>Su nombre: <input type='text' name='nombre' /></p>
+        <p>Su edad: <input type='text' name='edad' /></p>
+        <p><input type='submit' /></p>
+        </form>    
+        ";
 }
-
 
 add_shortcode('cn-ebook' ,'cn_mostrar_ebook');
 function cn_mostrar_ebook( $atts ){
@@ -47,13 +53,29 @@ function cn_mostrar_ebook( $atts ){
 
 add_shortcode('cn-button' ,'cn_mostrar_button');
 function cn_mostrar_button( $atts ){
-    $output = '( <form action="accion.php" method="post">
-                    <button> Presiona aquí</button>
-                </form>
-                )';
-    return $output;
+    $atts = shortcode_atts(
+                array(
+                    'url' => 'url',
+                    'background' => null,
+                    'color' => null,
+                    'texto' => 'Presiona aquí',
+                ), $atts
+    );
+    return "<form action= $atts[url] method='post'>
+                <input type='text' name='nombre' />
+                <button type='submit'
+                style='background: $atts[background]; color: $atts[color]'
+                > 
+                $atts[texto] 
+                </button>
+            </form>
+            <?php 
+            $sql='soy xdxd ';
+            print($sql);
+           ?>
+          
+            ";
 };
-
 
 
 ?>
