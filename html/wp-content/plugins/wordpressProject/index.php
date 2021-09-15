@@ -7,32 +7,32 @@
  */
 
 
-// function Activation() {
-// }
+function Activation() {
+}
 
-// function Deactivation() {
-//     flush_rewrite_rules();
-// }
+function Deactivation() {
+    flush_rewrite_rules();
+}
 
 // echo "'Plugin de Donar'";
 
-// // Register activation hook
-// register_activation_hook(__FILE__,'Activation');
-// // Register deactivation hook
-// register_deactivation_hook(__FILE__,'Deactivation');
+// Register activation hook
+register_activation_hook(__FILE__,'Activation');
+// Register deactivation hook
+register_deactivation_hook(__FILE__,'Deactivation');
 
 
-// add_action('admin_menu','CrearMenu');
-// function CrearMenu(){
-//     add_menu_page(
-//         'Instrucciones de uso del plugin',
-//         'Plugin Donación',
-//         'manage_options',
-//         plugin_dir_path(__FILE__). 'admin/tabla.php',
-//         null,
-//         '1'
-//     );
-// }
+add_action('admin_menu','CrearMenu');
+function CrearMenu(){
+    add_menu_page(
+        'Instrucciones de uso del plugin',
+        'Plugin Donación',
+        'manage_options',
+        plugin_dir_path(__FILE__). 'admin/tabla.php',
+        null,
+        '1'
+    );
+}
 
 function example_plugin()
 {
