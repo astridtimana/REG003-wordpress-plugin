@@ -66,12 +66,4 @@ function ShowContent(){
     echo "<h1>Instrucciones de donación</h1>";
 }
 
-function cn_button_redirect(){
-
-	return "<form action='https://google.com' method='post'><button>Click aquí</button></form>";
-}
-
-
-add_shortcode('cn_button' , 'cn_button_redirect');
-
 ?>
