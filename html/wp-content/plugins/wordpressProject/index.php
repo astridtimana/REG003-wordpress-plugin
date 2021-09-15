@@ -65,5 +65,28 @@ add_shortcode('pluginn' , 'example_plugin');
 function ShowContent(){
     echo "<h1>Instrucciones de donación</h1>";
 }
+function Shortcode() {
+    return "<button>Dona acá</button>";
+} add_shortcode('plugin_shortcode', 'Shortcode');
+
+function Shortcode2($atts) {
+    //attributes
+    $atts = shortcode_atts(
+        array( 'button_text2' => 'Donar'), $atts
+    );
+    return 'Hola, este es el: '.$atts['button_text2'];
+} add_shortcode('plugin_shortcode2', 'Shortcode2');
+
+
+add_shortcode('plugin_shortcode3', 'Shortcode3');
+function Shortcode3($atts) {
+    //attributes
+    $atts = shortcode_atts(
+        array( 'button_text3' => 'Donar'
+        ), $atts
+    );
+    //return '<button onclick="console.log(\'hola\')" data-toggle="modal" data-target="#ourModal">'. $atts['button_text3'] . '</button>';
+    return '<button onclick="window.location=\'form.php\'" data-toggle="modal" data-target="#ourModal">'. $atts['button_text3'] . '</button>';
+} 
 
 ?>
