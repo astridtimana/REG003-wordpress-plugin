@@ -3560,3 +3560,71 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
 [Wed Sep 15 13:12:21.300786 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.48 (Debian) PHP/7.4.23 configured -- resuming normal operations
 [Wed Sep 15 13:12:21.300859 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Sep 15 13:59:37.923295 2021] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Sep 15 14:00:39.145441 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.48 (Debian) PHP/7.4.23 configured -- resuming normal operations
+[Wed Sep 15 14:00:39.145524 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Sep 15 14:08:19.618015 2021] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Sep 15 14:08:25.752418 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.48 (Debian) PHP/7.4.23 configured -- resuming normal operations
+[Wed Sep 15 14:08:25.752532 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Sep 15 14:15:02.163818 2021] [php7:notice] [pid 20] [client 172.18.0.1:49014] 1
+[Wed Sep 15 14:15:05.608277 2021] [php7:notice] [pid 20] [client 172.18.0.1:49014] 1, referer: http://localhost/
+[Wed Sep 15 14:15:07.482140 2021] [php7:notice] [pid 20] [client 172.18.0.1:49014] 1, referer: http://localhost/
+[Wed Sep 15 14:15:49.643345 2021] [php7:notice] [pid 41] [client 172.18.0.1:49114] 1, referer: http://localhost/
+[Wed Sep 15 14:16:00.907020 2021] [php7:notice] [pid 43] [client 172.18.0.1:49128] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:16:00.936082 2021] [php7:notice] [pid 44] [client 172.18.0.1:49122] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:16:00.997260 2021] [php7:notice] [pid 44] [client 172.18.0.1:49122] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:16:01.006417 2021] [php7:notice] [pid 43] [client 172.18.0.1:49128] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:16:01.028463 2021] [php7:notice] [pid 25] [client 172.18.0.1:49148] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:16:01.067513 2021] [php7:notice] [pid 44] [client 172.18.0.1:49122] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:16:01.276042 2021] [php7:notice] [pid 44] [client 172.18.0.1:49122] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:17:01.318217 2021] [php7:notice] [pid 21] [client 172.18.0.1:49176] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:17:06.728025 2021] [php7:notice] [pid 27] [client 172.18.0.1:49184] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:17:07.956380 2021] [php7:notice] [pid 27] [client 172.18.0.1:49184] 1, referer: http://localhost/
+[Wed Sep 15 14:17:09.495363 2021] [php7:notice] [pid 27] [client 172.18.0.1:49184] 1, referer: http://localhost/2021/09/09/calculadora/
+[Wed Sep 15 14:19:14.068840 2021] [php7:notice] [pid 43] [client 172.18.0.1:49230] 1, referer: http://localhost/
+[Wed Sep 15 14:19:14.624178 2021] [php7:notice] [pid 24] [client 172.18.0.1:49238] 1, referer: http://localhost/2021/09/09/calculadora/
+[Wed Sep 15 14:19:18.745464 2021] [php7:notice] [pid 24] [client 172.18.0.1:49238] 1, referer: http://localhost/wp-admin/plugins.php
+[Wed Sep 15 14:19:19.115249 2021] [php7:notice] [pid 24] [client 172.18.0.1:49238] 1, referer: http://localhost/wp-admin/plugins.php
+[Wed Sep 15 14:19:20.933960 2021] [php7:notice] [pid 24] [client 172.18.0.1:49238] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject/admin/tabla.php
+[Wed Sep 15 14:19:36.031589 2021] [php7:notice] [pid 22] [client 172.18.0.1:49272] 1, referer: http://localhost/
+[Wed Sep 15 14:19:36.404273 2021] [php7:notice] [pid 22] [client 172.18.0.1:49272] 1, referer: http://localhost/2021/09/09/calculadora/
+[Wed Sep 15 14:19:51.088714 2021] [php7:notice] [pid 27] [client 172.18.0.1:49282] 1, referer: http://localhost/
+[Wed Sep 15 14:19:51.442860 2021] [php7:notice] [pid 27] [client 172.18.0.1:49282] 1, referer: http://localhost/2021/09/09/calculadora/
+[Wed Sep 15 14:19:52.007773 2021] [php7:notice] [pid 27] [client 172.18.0.1:49282] 1, referer: http://localhost/
+[Wed Sep 15 14:19:52.272040 2021] [php7:notice] [pid 27] [client 172.18.0.1:49282] 1, referer: http://localhost/2021/09/09/calculadora/
+[Wed Sep 15 14:19:52.940281 2021] [php7:notice] [pid 27] [client 172.18.0.1:49282] 1, referer: http://localhost/
+[Wed Sep 15 14:19:53.154333 2021] [php7:notice] [pid 27] [client 172.18.0.1:49282] 1, referer: http://localhost/2021/09/09/calculadora/
+[Wed Sep 15 14:19:54.337646 2021] [php7:notice] [pid 27] [client 172.18.0.1:49282] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:19:54.673889 2021] [php7:notice] [pid 42] [client 172.18.0.1:49310] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:19:55.345484 2021] [php7:notice] [pid 42] [client 172.18.0.1:49310] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:19:55.482748 2021] [php7:notice] [pid 42] [client 172.18.0.1:49310] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:19:56.150179 2021] [php7:notice] [pid 42] [client 172.18.0.1:49310] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:19:56.349072 2021] [php7:notice] [pid 42] [client 172.18.0.1:49310] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:19:56.897538 2021] [php7:notice] [pid 42] [client 172.18.0.1:49310] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:19:57.040441 2021] [php7:notice] [pid 42] [client 172.18.0.1:49310] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:20:10.294157 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:20:10.658185 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:20:12.332506 2021] [php7:notice] [pid 24] [client 172.18.0.1:49348] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.028289 2021] [php7:notice] [pid 24] [client 172.18.0.1:49348] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.053157 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.115868 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.126273 2021] [php7:notice] [pid 24] [client 172.18.0.1:49348] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.145603 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.176327 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.221867 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.351065 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/
+[Wed Sep 15 14:20:13.562014 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:20:13.769281 2021] [php7:notice] [pid 44] [client 172.18.0.1:49342] 1, referer: http://localhost/2021/09/09/calculadora/
+[Wed Sep 15 14:24:29.473956 2021] [php7:notice] [pid 41] [client 172.18.0.1:49438] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:24:29.873640 2021] [php7:notice] [pid 41] [client 172.18.0.1:49438] 1, referer: http://localhost/wp-admin/admin.php?page=wordpressProject%2Fadmin%2Ftabla.php
+[Wed Sep 15 14:24:33.602474 2021] [php7:notice] [pid 42] [client 172.18.0.1:49442] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.269173 2021] [php7:notice] [pid 42] [client 172.18.0.1:49442] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.302988 2021] [php7:notice] [pid 42] [client 172.18.0.1:49442] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.365771 2021] [php7:notice] [pid 42] [client 172.18.0.1:49442] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.377503 2021] [php7:notice] [pid 41] [client 172.18.0.1:49438] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.393125 2021] [php7:notice] [pid 42] [client 172.18.0.1:49442] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.423070 2021] [php7:notice] [pid 42] [client 172.18.0.1:49442] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.454199 2021] [php7:notice] [pid 41] [client 172.18.0.1:49438] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
+[Wed Sep 15 14:24:34.650263 2021] [php7:notice] [pid 41] [client 172.18.0.1:49438] 1, referer: http://localhost/wp-admin/post.php?post=10&action=edit
