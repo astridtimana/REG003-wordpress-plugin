@@ -62,32 +62,22 @@ add_shortcode('ShortcodeDonate', 'ShortcodeDonation');
 function ShortcodeDonation($atts) {
     //attributes
     $atts = shortcode_atts(
-        array( 'button_text3' => 'Donar' ,
-                'text_content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+        array( 'button_text3' => '[Title]' ,
         ), $atts
     );
     return '
-    <div class="donation-plugin-modal" style="display: none; background: #362277; position: absolute; top:30% ;left: 40%; padding: 20px; border-radius: 10px">
-    <p style="text-align: right; margin-right: 10px; color:#e13e3f; "><span style="cursor:pointer" onclick="document.querySelector(\'.donation-plugin-modal\').style.display = \'none\'">X</span></p>
-    <h2 style="color:#e13e3f">'
-    . $atts[text_content] .
+    <div class="donation-plugin-modal" style="display: block; background: #362277; padding: 20px; border-radius: 10px; width:30%">
+    <h2 style="color:#e13e3f; text-align:center">'
+    . $atts[button_text3] .
         '</h2><br/>
         <form method="post" action="" style="text-align: center;">
-            <input type="number" name="Importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none"/><br /><br />
-            <input type="text" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none" /><br /><br />
-            <input type="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none" /><br /><br />
-            <input type="number" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none" /><br /><br />
-            <input type="submit" name="form_exaple_contact_submit" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1";  outline: none/><br /><br />
+            <input type="number" name="Importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 100%"/><br /><br />
+            <input type="text" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
+            <input type="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 100%" /><br /><br />
+            <input type="number" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
+            <input type="submit" name="form_exaple_contact_submit" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
         </form>
     </div>
-
-      <div>
-        <button
-          onclick="document.querySelector(\'.donation-plugin-modal\').style.display = \'block\'"
-        >'
-           . $atts[button_text3] .
-        '</button>
-      </div>
     ';
 }
 
