@@ -1,68 +1,85 @@
-<?php 
+<?php
 /*
- * Plugin Name:       donationPlugin
- * Plugin URI:        https://example.com/plugins/the-basics/
- * Description:       Handle the basics with this plugin.
- * Version:           1.10.3
- */
+Plugin Name: plugin donation
+Plugin URI: https://example.com/plugin-name
+Description: Este un plugin para donación de dinero a organizaciones sin fines de lucro y puede ser integrado con la pasarela de pago Culqi.
+Version: 0.0.1
+Requires at Least: 5.6.1
+Requires PHP: 7.4.14
+Author: Astrid & Mery
+Licence: MIT
+*/
 
+if (!defined('ABSPATH')) exit;
 
-function Activation() {
+function Activate(){
 }
 
-function Deactivation() {
-    flush_rewrite_rules();
+function Deactivate(){
+	flush_rewrite_rules();
 }
 
-echo "'Plugin de Donar'";
+echo "Hola soy plugin";
 
-// Register activation hook
-register_activation_hook(__FILE__,'Activation');
-// Register deactivation hook
-register_deactivation_hook(__FILE__,'Deactivation');
+register_activation_hook(__FILE__, 'Activate');
+register_deactivation_hook(__FILE__, 'Deactivate');
+
+add_action('admin_menu', 'CreateMenu');
+
+function CreateMenu() {
+	add_menu_page(
+		'Instrucciones de uso del plugin Menú', //pageTitle
+		'DonationPlugin',//menuTitle
+		'manage_options',//capability
+		plugin_dir_path(__FILE__) . 'admin/mainpage.php',//menuSlug
+		null, //functionName
+		'1' //position
+	);
+	add_submenu_page(
+		plugin_dir_path(__FILE__) . 'admin/mainpage.php',//menuSlug
+		'Submenu 1',
+		'Historial de Donaciones',
+		'manage_options',
+		plugin_dir_path(__FILE__) . 'admin/history.php',
+		null,
+		'2'
+	);
+	add_submenu_page(
+		plugin_dir_path(__FILE__) . 'admin/mainpage.php',//menuSlug
+		'Submenu 2',
+		'Settings Culqi',
+		'manage_options',
+		plugin_dir_path(__FILE__) . 'admin/settings.php',
+		null,
+		'3'
+	);
+}
 
 
-add_action('admin_menu','CrearMenu');
-function CrearMenu(){
-    add_menu_page(
-        'Instrucciones de uso del plugin',
-        'Plugin Donación',
-        'manage_options',
-        plugin_dir_path(__FILE__). 'admin/tabla.php',
-        null,
-        '1'
+
+
+add_shortcode('ShortcodeDonate', 'ShortcodeDonation');
+function ShortcodeDonation($atts) {
+    //attributes
+    $atts = shortcode_atts(
+        array( 'title_text3' => '[Title]' ,
+        ), $atts
     );
+    return '
+    <div class="donation-plugin-modal" style="display: block; background: #362277; padding: 20px; border-radius: 10px; width:30%">
+    <h2 style="color:#e13e3f; text-align:center">'
+    . $atts[title_text3] .
+        '</h2><br/>
+        <form method="post" action="" style="text-align: center;">
+            <input type="number" name="Importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 100%"/><br /><br />
+            <input type="text" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
+            <input type="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 100%" /><br /><br />
+            <input type="number" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
+            <input type="submit" name="form_exaple_contact_submit" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
+        </form>
+    </div>
+    ';
 }
 
-// function example_plugin()
-// {
 
-// 	/* create a variable to hold the html information */
-// 	$content = ''; /* creates a string variable */
-
-// 	/* open the form tag */
-// 	$content .= '<form method="post" action="'.plugin_dir_path(__FILE__).'admin/processed.php">'; /* adds to the string variable */
-
-// 	$content .= '<input type="number" name="Importe" placeholder="Monto a aportar" /><br /><br />';
-// 	$content .= '<input type="text" name="your_name" placeholder="Nombre completo" /><br /><br />';
-// 	$content .= '<input type="email" name="your_email" placeholder="Email" /><br /><br />';
-//     $content .= '<input type="number" name="phone" placeholder="Número de teléfono" /><br /><br />';
-//     $content .= '<input type="number" name="card" placeholder="Número de tarjeta" /><br /><br />';
-//     $content .= '<input type="date" name="expiration" placeholder="Fecha de exp." /><br /><br />';
-//     $content .= '<input type="number" name="cvv" placeholder="CVV" /><br /><br />';
-
-// 	$content .= '<input type="submit" name="form_exaple_contact_submit" value="DONAR" /><br /><br />';
-
-// 	/* close the form tag */
-// 	$content .= '</form>';
-
-// 	return $content;
-// }
-// add_shortcode('pluginn' , 'example_plugin');
-
-
-
-function ShowContent(){
-    echo "<h1>Instrucciones de donación</h1>";
-}
 ?>
