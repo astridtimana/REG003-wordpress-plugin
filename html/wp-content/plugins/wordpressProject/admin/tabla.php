@@ -11,23 +11,23 @@
 </head>
 
 <body>
-     <form method="post">
+     <form method="post" action="processed.php">
           <div class="mb-2">
-               <label for="exampleInputEmail1" class="form-label">Nombre</label>
-               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="name">
+               <label for="name" class="form-label">Nombre</label>
+               <input type="text" class="form-control" id="name" aria-describedby="name">
           </div>
           <div class="mb-2">
-               <label for="exampleInputEmail1" class="form-label">Correo</label>
-               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+               <label for="email" class="form-label">Correo</label>
+               <input type="email" class="form-control" id="email" aria-describedby="email">
           </div>
           <div class="mb-2">
-               <label for="exampleInputEmail1" class="form-label">Nro de Tarjeta</label>
-               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="card">
+               <label for="card" class="form-label">Nro de Tarjeta</label>
+               <input type="number" class="form-control" id="card" aria-describedby="card">
                <div id="emailHelp" class="form-text">Tu información de tarjeta es confidencial.</div>
           </div>
           <div class="mb-3">
-               <label for="exampleInputPassword1" class="form-label">Llave</label>
-               <input type="password" class="form-control" id="exampleInputPassword1">
+               <label for="key" class="form-label">Llave</label>
+               <input type="password" class="form-control" id="key">
                <div id="emailHelp" class="form-text">Tu llave es confidencial.</div>
           </div>
           <button type="submit" class="btn btn-primary">Guardar</button>
@@ -35,3 +35,4 @@
 </body>
 
 </html>
+

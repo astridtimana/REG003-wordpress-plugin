@@ -18,10 +18,10 @@ services:
     image: phpmyadmin
     container_name: phpmyadmin
     restart: always
-    ports:
-      -8899:80
-    environment:
-      -PMA_ARBITRARY=1
+    ports: 
+      - 8899:80
+    environment: 
+      - PMA_ARBITRARY=1
 
   wordpress:
     depends_on:
@@ -69,4 +69,3 @@ services:
       WORDPRESS_DB_NAME: wordpress
 volumes:
   db_data: {}
-
