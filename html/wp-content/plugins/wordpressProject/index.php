@@ -21,9 +21,7 @@ function Activation() {
         `Email` VARCHAR(50) NULL,
         `Telefono` INT NOT NULL,
         PRIMARY KEY (`DonacionId`));";
-
     $wpdb->query($sql);
-
 }
 
 function Deactivation(){
