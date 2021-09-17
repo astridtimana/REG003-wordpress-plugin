@@ -25,8 +25,8 @@
             <?php
             
                 foreach ($lista_donaciones as $key => $value) {
-                    $nombre = $value['Nombre']
-                    $shortcode = $value['ShortCode']
+                    $nombre = $value['Nombre'];
+                    $shortcode = $value['ShortCode'];
                 }
 
             ?>
