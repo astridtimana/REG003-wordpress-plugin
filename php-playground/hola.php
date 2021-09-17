@@ -1,6 +1,7 @@
 <html>
  <head>
   <title>Prueba de PHP</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  </head>
  <body>
    <form method="post">
@@ -18,11 +19,10 @@
       </div>
       <button type="submit" class="btn btn-primary mt-5" id="buyButton">Guardar Cambios</button>
    </form>
-    
     <script src="https://checkout.culqi.com/js/v3"></script>
     <script>
       // Configura tu llave pública
-      Culqi.publicKey = 'pk_test_87a7198984bae065';
+      Culqi.publicKey = 'pk_test_21ebcae7d9fc13e9';
       Culqi.init();
       // Configura tu Culqi Checkout
       Culqi.settings({
@@ -37,7 +37,6 @@
         Culqi.open();
         e.preventDefault();
       });
-
       function culqi() {
         if (Culqi.token) { // ¡Objeto Token creado exitosamente!
             var token = Culqi.token.id;
