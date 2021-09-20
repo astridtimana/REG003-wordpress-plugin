@@ -95,40 +95,38 @@ function ShortcodeDonation($atts) {
             <input type="number" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
             <input type="submit" name="submit" value="DONAR" id="buyButton" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
         </form>
-        <script src="https://checkout.culqi.com/js/v3"></script>
-        <script>
-        // Configura tu llave pública
-        Culqi.publicKey = "Aquí inserta tu llave pública";
-        // Configura tu Culqi Checkout
-        Culqi.settings({
-            title: "Culqi Store",
-            currency: "PEN",
-            description: "Polo Culqi lover",
-            amount: 3500
-        });
-        // Usa la funcion Culqi.open() en el evento que desees
-        $("#buyButton").on("click", function(e) {
-            // Abre el formulario con las opciones de Culqi.settings
-            Culqi.open();
-            e.preventDefault();
-        });
-    </script>
+    //     <script src="https://checkout.culqi.com/js/v3"></script>
+    //     <script>
+    //     // Configura tu llave pública
+    //     Culqi.publicKey = "Aquí inserta tu llave pública";
+    //     // Configura tu Culqi Checkout
+    //     Culqi.settings({
+    //         title: "Culqi Store",
+    //         currency: "PEN",
+    //         description: "Polo Culqi lover",
+    //         amount: 3500
+    //     });
+    //     // Usa la funcion Culqi.open() en el evento que desees
+    //     $("#buyButton").on("click", function(e) {
+    //         // Abre el formulario con las opciones de Culqi.settings
+    //         Culqi.open();
+    //         e.preventDefault();
+    //     });
+    // </script>
     </div>
     </body>
     </html>
     ';
     
 }
-
     // isset -> evalua si una variable está definida - se ha mandado un formulario?
 
-
-	// if(isset($_POST['submit'])){
-	// 	$campos = array("Monto"=>$_POST['importe'], "Nombre"=>$_POST['your_name'], "Email"=>$_POST['your_email'], "Telefono"=>$_POST['phone']);
-	// 	$tabla = "wp_donaciones";//Tabla en base de datos
-	// 	$wpdb->insert($tabla,$campos);
+	if(isset($_POST['submit'])){
+		$campos = array("Monto"=>$_POST['importe'], "Nombre"=>$_POST['your_name'], "Email"=>$_POST['your_email'], "Telefono"=>$_POST['phone']);
+		$tabla = "wp_donaciones";//Tabla en base de datos
+		$wpdb->insert($tabla,$campos);
 		
-	// }
+	}
 
 
 ?>
