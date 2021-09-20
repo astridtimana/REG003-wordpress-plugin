@@ -67,5 +67,13 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+    - 8899:80
+    environment:
+    - PMA_ARBITRARY=1    
 volumes:
   db_data: {}

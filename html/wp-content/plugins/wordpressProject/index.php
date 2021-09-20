@@ -10,6 +10,7 @@ Author: Astrid & Mery
 Licence: MIT
 */
 
+<<<<<<< HEAD
 if (!defined('ABSPATH')) exit;
 
 function Activation() {
@@ -35,6 +36,36 @@ function Deactivation() {
 register_activation_hook(__FILE__, 'Activation');
 register_deactivation_hook(__FILE__, 'Deactivation');
 
+=======
+ //require
+ require_once dirname(__FILE__) . '/classes/shortcode.class.php';
+
+if (!defined('ABSPATH')) exit;
+
+function Activate(){
+  // crea una tabla de bd desde wordpress
+  global $wpdb;
+
+  $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}donaciones(
+      `DonacionId` INT NOT NULL AUTO_INCREMENT,
+      `Monto` INT NOT NULL,
+      `Nombre` VARCHAR(50) NULL,
+      `Email` VARCHAR(50) NULL,
+      `Telefono` INT NOT NULL,
+      PRIMARY KEY (`DonacionId`));";
+
+  $wpdb->query($sql);
+}
+
+function Deactivate(){
+	flush_rewrite_rules();
+}
+
+// echo "Hola soy plugin";
+
+register_activation_hook(__FILE__, 'Activate');
+register_deactivation_hook(__FILE__, 'Deactivate');
+>>>>>>> 345bf56ed736e9617d0258914c7391a06dc5f2ba
 
 add_action('admin_menu', 'CreateMenu');
 
@@ -66,7 +97,6 @@ function CreateMenu() {
 		'3'
 	);
 }
-
 
 
 

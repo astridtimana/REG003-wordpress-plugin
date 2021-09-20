@@ -19,6 +19,10 @@
       </div>
       <button type="submit" class="btn btn-primary mt-5" id="buyButton">Guardar Cambios</button>
    </form>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 345bf56ed736e9617d0258914c7391a06dc5f2ba
     <script src="https://checkout.culqi.com/js/v3"></script>
     <script>
       // Configura tu llave pública
@@ -37,6 +41,10 @@
         Culqi.open();
         e.preventDefault();
       });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 345bf56ed736e9617d0258914c7391a06dc5f2ba
       function culqi() {
         if (Culqi.token) { // ¡Objeto Token creado exitosamente!
             var token = Culqi.token.id;
