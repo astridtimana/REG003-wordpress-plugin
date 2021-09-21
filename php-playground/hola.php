@@ -4,27 +4,40 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  </head>
  <body>
-   <form method="post">
+   <form method="post" action="accion.php" style="display:none">
       <div class="mb-2 w-50">
          <label for="exampleInputEmail1" class="form-label">Nombre de la organización</label>
-         <input type="text" class="form-control" id="organizationName" aria-describedby="name">
+         <input type="text" class="form-control" id="organizationName" aria-describedby="name" name="organization">
       </div>
       <div class="mb-2 w-50">
          <label for="exampleInputEmail1" class="form-label">Llave pública</label>
-         <input type="text" class="form-control" id="publicKey" aria-describedby="emailHelp">
+         <input type="text" class="form-control" id="publicKey" aria-describedby="emailHelp" name="namePublicKey">
       </div>
       <div class="mb-2 w-50">
          <label for="exampleInputEmail1" class="form-label">Llave secreta</label>
-         <input type="text" class="form-control" id="secretKey" aria-describedby="emailHelp">
+         <input type="text" class="form-control" id="secretKey" aria-describedby="emailHelp" name="nameSeccretKey">
       </div>
       <button type="submit" class="btn btn-primary mt-5" id="buyButton">Guardar Cambios</button>
    </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    <button onclick="test()">test</button>
+>>>>>>> 528dd92e0ef59ffee8c7e2fd520d6205b64fc6ff
 
 >>>>>>> 345bf56ed736e9617d0258914c7391a06dc5f2ba
     <script src="https://checkout.culqi.com/js/v3"></script>
     <script>
+      function test(){
+        document.getElementById('organizationName').value = "Laboratoria";
+        document.getElementById('publicKey').value = "#111";
+        document.getElementById('secretKey').value = "#222";
+        document.forms[0].submit();
+
+      }
+
+    
       // Configura tu llave pública
       Culqi.publicKey = 'pk_test_21ebcae7d9fc13e9';
       Culqi.init();
@@ -36,6 +49,7 @@
         amount: 3500
       });
       // Usa la funcion Culqi.open() en el evento que desees
+<<<<<<< HEAD
       $('#buyButton').on('click', function(e) {
         // Abre el formulario con las opciones de Culqi.settings
         Culqi.open();
@@ -43,6 +57,13 @@
       });
 <<<<<<< HEAD
 =======
+=======
+      // $('#buyButton').on('click', function(e) {
+      //   // Abre el formulario con las opciones de Culqi.settings
+      //   Culqi.open();
+      //   e.preventDefault();
+      // });
+>>>>>>> 528dd92e0ef59ffee8c7e2fd520d6205b64fc6ff
 
 >>>>>>> 345bf56ed736e9617d0258914c7391a06dc5f2ba
       function culqi() {

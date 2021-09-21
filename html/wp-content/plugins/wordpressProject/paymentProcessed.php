@@ -10,14 +10,20 @@ $SECRET_KEY = "pk_test_87a7198984bae065";
 $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
 
 // Creando cargo
-$charge = $culqi->Charges->create(
-  array(
-      "amount" => $_POST['amount'],
-      "currency_code" => "PEN",
-      "description" => $_POST['description'],
-      "email" => $_POST['email'],
-      "source_id" => $_POST['token'],
-    )
- );
- echo '¡Donación Exitosa!';
+$dataM = array(
+    "amount" => $_POST['amount'],
+    "currency_code" => "PEN",
+    "description" => $_POST['description'],
+    "email" => $_POST['email'],
+    "source_id" => $_POST['token'],
+);
+
+echo $dataM;
+// Creando cargo
+$charge = $culqi->Charges->create($dataM);
+echo '¡Donación Exitosa!';
+
+//Respuesta
+print_r($charge);
+
 ?>
