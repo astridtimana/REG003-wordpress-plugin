@@ -1,4 +1,8 @@
 .<?php
+include_once dirname(__FILE__).'/Requests/library/Requests.php';
+Requests::register_autoloader();
+include_once dirname(__FILE__).'/culqi-php/lib/culqi.php';
+
   class shortCode
   {
     public function formulario($atts)
@@ -64,18 +68,37 @@
             alert("Se ha creado un token:" + token);
             //En esta linea de codigo debemos enviar el "Culqi.token.id"
             //hacia tu servidor con Ajax
-            $.ajax({
-              url: "paymentProcessed.php",
-              type: "POST",
-              data: {
-                description: dp_description,
-                amount: dp_amount,
-                token: token,
-                email: email
-              }
-            }).done(function(resp){
-              alert(resp);
-            });
+            function add_this_script_footer(){ ?>
+
+            <script>
+            jQuery(document).ready(function($) {
+
+              // This is the variable we are passing via AJAX
+              var fruit = "Banana";
+          
+              // This does the ajax request (The Call).
+              $.ajax({
+                  url: ajaxurl, // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+                  data: {
+                      "action":"example_ajax_request", // This is our PHP function below
+                      "description": dp_description,
+                      "amount": dp_amount,
+                      "token": token,
+                     " email": email
+                  },
+                  success:function(data) {
+              // This outputs the result of the ajax request (The Callback)
+                      window.alert(data);
+                  },  
+                  error: function(errorThrown){
+                      window.alert(errorThrown);
+                  }
+              });   
+          
+          });
+          </script>
+          
+        <?php } 
         } else { // ¡Hubo algún problema!
             // Mostramos JSON de objeto error en consola
             console.log(Culqi.error);
@@ -97,4 +120,32 @@
     }
   }
 
-  ?>
+  add_action("in_admin_footer", "add_this_script_footer"); 
+
+  function example_ajax_request() {
+
+    $SECRET_KEY = "pk_test_87a7198984bae065";
+    $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
+    // The $_REQUEST contains all the data sent via AJAX from the Javascript call
+    if ( isset($_REQUEST) ) {
+
+      $charge = $culqi->Charges->create(
+        array(
+            "amount" => $_POST['amount'],
+            "currency_code" => "PEN",
+            "description" => $_POST['description'],
+            "email" => $_POST['email'],
+            "source_id" => $_POST['token'],
+          )
+       );
+       echo '¡Donación Exitosa!';  
+    }
+
+    // Always die in functions echoing AJAX content
+   die();
+}
+
+// This bit is a special action hook that works with the WordPress AJAX functionality. 
+add_action( 'wp_ajax_example_ajax_request', 'example_ajax_request' );
+
+?>
