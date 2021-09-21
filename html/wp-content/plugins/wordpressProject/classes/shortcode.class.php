@@ -1,5 +1,6 @@
 .<?php
 class shortCode{
+
   public function formulario($atts){
   //attributes
   return '
@@ -56,7 +57,7 @@ class shortCode{
       if (Culqi.token) { // ¡Objeto Token creado exitosamente!
           let token = Culqi.token.id;
           let email = Culqi.token.email;
-          alert("Se ha creado un token:" + token);
+          //alert("Se ha creado un token:" + token);
           //En esta linea de codigo debemos enviar el "Culqi.token.id"
           //hacia tu servidor con Ajax
           $.ajax({
