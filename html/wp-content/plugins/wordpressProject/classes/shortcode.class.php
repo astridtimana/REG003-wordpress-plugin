@@ -1,6 +1,8 @@
 .<?php
-class shortCode{
+    $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
+    //echo $paymentUrl;
 
+class shortCode{
   public function formulario($atts){
   //attributes
   return '
@@ -22,14 +24,29 @@ class shortCode{
         <input type="text" id="description" name="description" placeholder="Concepto de donación" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
         <input type="submit" id="buyButton" name="submit" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
     </form>
+    
+    <form id ="form_1" method="post" style="text-align: center; display:none" action="" >
+    <input type="number" id="amount" name="amount" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 100%"/><br /><br />
+    <input type="text" id="name" name="token" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
+    <input type="email" id="email" name="email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 100%" /><br /><br />
+    <input type="number" id="phone" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
+    <input type="text" id="description" name="description" placeholder="Concepto de donación" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
+    <input type="submit" id="buyButton01" name="submit01" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
+    </form>
+
 
     <script>
+    // document.forms[0].elements["amount"].value = 100;
+    // document.forms[1].elements[1].value = 100;
+    // console.log(document.forms[1].elements["amount"].value);
+    //document.forms[1].elements[amount];
+    
+
     let dp_amount = "";
     let dp_name = "";
     let dp_email = "";
     let dp_phone = "";
     let dp_description = "";
-
     // Usa la funcion Culqi.open() en el evento que desees
     $("#buyButton").on("click", function(e) {
       dp_amount = document.getElementById("amount").value*100;
@@ -37,7 +54,6 @@ class shortCode{
       dp_email = document.getElementById("email").value;
       dp_phone = document.getElementById("phone").value;
       dp_description = document.getElementById("description").value;
-
       // Configura tu llave pública
       Culqi.publicKey = "sk_test_f73937b9e690e803";
       // Configura tu Culqi Checkout
@@ -47,31 +63,33 @@ class shortCode{
           description: dp_description,
           amount: dp_amount,
       });
-
       // Abre el formulario con las opciones de Culqi.settings
       Culqi.open();
       e.preventDefault();
     });
-
     function culqi() {
+
       if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+          //document.forms[1].submit();
+          //console.log(document.forms[1]);
+
+  
           let token = Culqi.token.id;
+          //console.log(Culqi.token)
           let email = Culqi.token.email;
-          //alert("Se ha creado un token:" + token);
+          alert("Se ha creado un token:" + token);
           //En esta linea de codigo debemos enviar el "Culqi.token.id"
           //hacia tu servidor con Ajax
-          $.ajax({
-            url: "paymentProcessed.php",
-            type: "POST",
-            data: {
-              description: dp_description,
-              amount: dp_amount,
-              token: token,
-              email: email
-            }
-          }).done(function(resp){
-            alert(resp);
-          });
+
+          document.forms[1].elements["amount"].value = dp_amount;
+          document.forms[1].elements["token"].value = token;
+          document.forms[1].elements["email"].value = email;
+          document.forms[1].elements["description"].value = dp_description;
+          let form01= document.getElementById("form_1");
+          console.log(form01)
+          //form01.requestSubmit();
+
+
       } else { // ¡Hubo algún problema!
           // Mostramos JSON de objeto error en consola
           console.log(Culqi.error);
@@ -80,7 +98,6 @@ class shortCode{
     };
   
     </script>
-
     </div>
   </body>
   </html>
