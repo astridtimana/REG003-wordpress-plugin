@@ -1,4 +1,4 @@
-version: "3.9"
+version: "2.4"
 
 services:
   db:
@@ -6,7 +6,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3308:3308"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
