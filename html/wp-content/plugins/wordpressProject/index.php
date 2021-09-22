@@ -12,36 +12,6 @@ Licence: MIT
 //require
 require_once dirname(__FILE__) . '/classes/shortcode.class.php';
 
- if(isset($_POST['token'])){
-	// Cargamos Requests y Culqi PHP
-	include_once dirname(__FILE__).'./Requests/library/Requests.php';
-	Requests::register_autoloader();
-	include_once dirname(__FILE__).'./culqi-php/lib/culqi.php';
-
-
-	// Configurar tu API Key y autenticación
-	$SECRET_KEY = "sk_test_f73937b9e690e803";
-	$culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
-
-	// Creando cargo
-	$dataM = array(
-		"amount" => $_POST['amount'],
-		"currency_code" => "PEN",
-		"description" => $_POST['description'],
-		"email" => $_POST['email'],
-		"source_id" => $_POST['token'],
-	);
-
-	echo $dataM;
-	// Creando cargo
-	$charge = $culqi->Charges->create($dataM);
-	echo '¡Donación Exitosa!';
-
-	//Respuesta
-	//print_r($charge);
-
-  }
-  else{
 
 if (!defined('ABSPATH')) exit;
 
@@ -115,14 +85,7 @@ function ShortcodeDonation($atts) {
     
     
 }
-
-	// if(isset($_POST['submit'])){
-	// 	$campos = array("Monto"=>$_POST['importe'], "Nombre"=>$_POST['your_name'], "Email"=>$_POST['your_email'], "Telefono"=>$_POST['phone']);
-	// 	$tabla = "wp_donaciones";//Tabla en base de datos
-	// 	$wpdb->insert($tabla,$campos);
-
-	// }
-    
+   // add_action('wp_enqueue_scripts', 'dcms_insertar_js');
 
 		// PRUEBA AJAX
     // add_action('wp_enqueue_scripts', 'dcms_insertar_js');
@@ -133,5 +96,53 @@ function ShortcodeDonation($atts) {
 
     //     wp_localize_script('dcms_miscript', 'dcms_vars', ['ajaxurl'=>admin_url('admin-ajax.php')])
     // }
-	}
+
+
+	// if(isset($_POST['submit01'])){
+	// 	error_log("línea 95");
+
+	// 	// Cargamos Requests y Culqi PHP
+	// 	include_once dirname(__FILE__).'/Requests/library/Requests.php';
+	// 	Requests::register_autoloader();
+	// 	include_once dirname(__FILE__).'/culqi-php/lib/culqi.php';
+	
+	// 	error_log("línea 22");
+	
+	// 	// Configurar tu API Key y autenticación
+	// 	$SECRET_KEY = "pk_test_87a7198984bae065";
+	// 	$culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
+	
+	// 	// Creando cargo
+	// 	$charge = $culqi->Charges->create(
+	// 		array(
+	// 			"amount" => $_POST['amount2'],
+	// 			"currency_code" => "PEN",
+	// 			"email" => $_POST['email2'],
+	// 			"source_id" => $_POST['token'],
+	// 	)
+	// 	   );
+	// 	// $dataM = array(
+	// 	// 	"amount" => $_POST['amount2'],
+	// 	// 	"currency_code" => "PEN",
+	// 	// 	"description" => $_POST['description2'],
+	// 	// 	"email" => $_POST['email2'],
+	// 	// 	"source_id" => $_POST['token'],
+	// 	// );
+	
+	// 	// echo $dataM;
+	// 	// // Creando cargo
+	// 	// $charge = $culqi->Charges->create($dataM);
+	
+	// 	echo '¡Donación Exitosa!';
+	
+	// 	//Respuesta
+	// 	print_r($charge);
+	// }
+		// if(isset($_POST['submit'])){
+	// 	$campos = array("Monto"=>$_POST['importe'], "Nombre"=>$_POST['your_name'], "Email"=>$_POST['your_email'], "Telefono"=>$_POST['phone']);
+	// 	$tabla = "wp_donaciones";//Tabla en base de datos
+	// 	$wpdb->insert($tabla,$campos);
+
+	// }
+
 ?>
