@@ -75,14 +75,59 @@ function ShortcodeDonation($atts) {
     . $atts[button_text3] .
         '</h2><br/>
         <form method="post" action="" style="text-align: center;">
-            <input type="number" name="Importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 100%"/><br /><br />
+            <input type="number" name="importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 100%"/><br /><br />
             <input type="text" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
             <input type="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 100%" /><br /><br />
             <input type="number" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
-            <input type="submit" name="form_exaple_contact_submit" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
+            <input id="buyButton" type="submit" name="submit" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
         </form>
     </div>
     ';
 }
+
+//isset -> evalua si una variable está definida - se ha mandado un formulario?
+if(isset($_POST['submit'])){
+    $campos = array(
+        "Monto"=>$_POST['importe'], 
+        "Nombre"=>$_POST['your_name'], 
+        "Email"=>$_POST['your_email'], 
+        "Telefono"=>$_POST['phone']
+    );
+        $tabla = "wp_donaciones";//Tabla en base de datos
+        $query = $wpdb->insert($tabla,$campos);
+   
+        if (window.history.replaceState) { // verificamos disponibilidad
+            window.history.replaceState(null, null, window.location.href);
+        }
+
+        //header("Location": "index.php");
+
+        // $insertar = "INSERT INTO wp_donaciones VALUES ($campos)"
+    // if ($query) {
+    //     echo "<script> alert('Correcto');
+    //         location.href='index.php';
+    //         </script>
+    //     "
+    // }else {
+    //         echo "<script> alert('Incorrecto');
+    //         location.href='index.php';
+    //         </script>
+    //        "
+    // }
+}
+
+
+
+// add_action('wp', 'insertar_wpdb');
+// function insertar_wpdb(){
+//     $campos = array(
+//         "Monto"=>$_POST['importe'], 
+//         "Nombre"=>$_POST['your_name'], 
+//         "Email"=>$_POST['your_email'], 
+//         "Telefono"=>$_POST['phone']
+//     );
+//     $tabla = "wp_donaciones";//Tabla en base de datos
+//     $wpdb->insert($tabla,$campos);
+// }
 
 
