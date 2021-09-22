@@ -98,10 +98,10 @@ function ShortcodeDonation($atts) {
     // }
 
 
-	// if(isset($_POST['submit01'])){
+	// if(isset($_POST["submit01"])){
 	// 	error_log("línea 95");
 
-	// 	// Cargamos Requests y Culqi PHP
+	// 	//Cargamos Requests y Culqi PHP
 	// 	include_once dirname(__FILE__).'/Requests/library/Requests.php';
 	// 	Requests::register_autoloader();
 	// 	include_once dirname(__FILE__).'/culqi-php/lib/culqi.php';
@@ -109,18 +109,18 @@ function ShortcodeDonation($atts) {
 	// 	error_log("línea 22");
 	
 	// 	// Configurar tu API Key y autenticación
-	// 	$SECRET_KEY = "pk_test_87a7198984bae065";
-	// 	$culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
+	// 	// $SECRET_KEY = "pk_test_87a7198984bae065";
+	// 	// $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
 	
-	// 	// Creando cargo
-	// 	$charge = $culqi->Charges->create(
-	// 		array(
-	// 			"amount" => $_POST['amount2'],
-	// 			"currency_code" => "PEN",
-	// 			"email" => $_POST['email2'],
-	// 			"source_id" => $_POST['token'],
-	// 	)
-	// 	   );
+	// 	// // Creando cargo
+	// 	// $charge = $culqi->Charges->create(
+	// 	// 	array(
+	// 	// 		"amount" => $_POST['amount2'],
+	// 	// 		"currency_code" => "PEN",
+	// 	// 		"email" => $_POST['email2'],
+	// 	// 		"source_id" => $_POST['token'],
+	// 	// )
+	// 	//    );
 	// 	// $dataM = array(
 	// 	// 	"amount" => $_POST['amount2'],
 	// 	// 	"currency_code" => "PEN",
@@ -130,19 +130,13 @@ function ShortcodeDonation($atts) {
 	// 	// );
 	
 	// 	// echo $dataM;
-	// 	// // Creando cargo
-	// 	// $charge = $culqi->Charges->create($dataM);
+	// 	// Creando cargo
+	// 	$charge = $culqi->Charges->create($dataM);
 	
 	// 	echo '¡Donación Exitosa!';
 	
 	// 	//Respuesta
-	// 	print_r($charge);
-	// }
-		// if(isset($_POST['submit'])){
-	// 	$campos = array("Monto"=>$_POST['importe'], "Nombre"=>$_POST['your_name'], "Email"=>$_POST['your_email'], "Telefono"=>$_POST['phone']);
-	// 	$tabla = "wp_donaciones";//Tabla en base de datos
-	// 	$wpdb->insert($tabla,$campos);
-
+	// 	// print_r($charge);
 	// }
 
 ?>
