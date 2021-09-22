@@ -19,14 +19,8 @@
       </div>
       <button type="submit" class="btn btn-primary mt-5" id="buyButton">Guardar Cambios</button>
    </form>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-    <button onclick="test()">test</button>
->>>>>>> 528dd92e0ef59ffee8c7e2fd520d6205b64fc6ff
 
->>>>>>> 345bf56ed736e9617d0258914c7391a06dc5f2ba
+    <button onclick="test()">test</button>
     <script src="https://checkout.culqi.com/js/v3"></script>
     <script>
       function test(){
@@ -37,47 +31,6 @@
 
       }
 
-    
-      // Configura tu llave pública
-      Culqi.publicKey = 'pk_test_21ebcae7d9fc13e9';
-      Culqi.init();
-      // Configura tu Culqi Checkout
-      Culqi.settings({
-        title: 'Culqi Store',
-        currency: 'PEN',
-        description: 'Polo Culqi lover',
-        amount: 3500
-      });
-      // Usa la funcion Culqi.open() en el evento que desees
-<<<<<<< HEAD
-      $('#buyButton').on('click', function(e) {
-        // Abre el formulario con las opciones de Culqi.settings
-        Culqi.open();
-        e.preventDefault();
-      });
-<<<<<<< HEAD
-=======
-=======
-      // $('#buyButton').on('click', function(e) {
-      //   // Abre el formulario con las opciones de Culqi.settings
-      //   Culqi.open();
-      //   e.preventDefault();
-      // });
->>>>>>> 528dd92e0ef59ffee8c7e2fd520d6205b64fc6ff
-
->>>>>>> 345bf56ed736e9617d0258914c7391a06dc5f2ba
-      function culqi() {
-        if (Culqi.token) { // ¡Objeto Token creado exitosamente!
-            var token = Culqi.token.id;
-            alert('Se ha creado un token:' + token);
-            //En esta linea de codigo debemos enviar el "Culqi.token.id"
-            //hacia tu servidor con Ajax
-        } else { // ¡Hubo algún problema!
-            // Mostramos JSON de objeto error en consola
-            console.log(Culqi.error);
-            alert(Culqi.error.user_message);
-        }
-      };
   </script>
  </body>
 </html>
