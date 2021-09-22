@@ -16,7 +16,7 @@ $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
 // echo $_POST['email'];
 // echo $_POST['token'];
 
-// // Creando cargo
+// Creando cargo
 $charge = $culqi->Charges->create(
     array(
         "amount" => $_POST['amount'],
@@ -34,7 +34,7 @@ echo '¡Donación exitosa!';
 } catch (Exception $e) {
     echo "catch";
     echo json_encode($e->getMessage());
-  }
+}
 
 
 ?>
