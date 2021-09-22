@@ -11,7 +11,6 @@ class shortCode{
     return '
     <html>
     <head>
-    <script src="https://checkout.culqi.com/js/v3"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
@@ -45,7 +44,7 @@ class shortCode{
         dp_phone = document.getElementById("phone").value;
         dp_description = document.getElementById("description").value;
         // Configura tu llave pública
-        Culqi.publicKey = "pk_test_87a7198984bae065";
+        Culqi.publicKey = "sk_test_7d9f4a5fe70f8315";
         // Configura tu Culqi Checkout
         Culqi.settings({
             title: "Culqi Store",
@@ -61,7 +60,7 @@ class shortCode{
         if (Culqi.token) { // ¡Objeto Token creado exitosamente!
             let token = Culqi.token.id;
             let email = Culqi.token.email;
-            alert("Se ha creado un token:" + token);
+            //alert("Se ha creado un token:" + token);
             //En esta linea de codigo debemos enviar el "Culqi.token.id"
             //hacia tu servidor con Ajax
             $.ajax({
@@ -85,6 +84,7 @@ class shortCode{
     
       </script>
       </div>
+      <script src="https://checkout.culqi.com/js/v3"></script>
       </body>
       
     </html>
