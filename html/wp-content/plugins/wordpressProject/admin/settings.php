@@ -17,24 +17,24 @@
       <form method="post">
         <div class="mb-2 w-50">
           <label for="exampleInputEmail1" class="form-label">Nombre de la organización</label>
-          <input type="text" class="form-control" id="organizationName" aria-describedby="name">
+          <input type="text" class="form-control" id="organizationName" name="orgName"aria-describedby="name">
         </div>
         <div class="mb-2 w-50">
           <label for="exampleInputEmail1" class="form-label">Llave pública</label>
-          <input type="text" class="form-control" id="publicKey" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="publicKey" name="publicKey" aria-describedby="emailHelp">
         </div>
         <div class="mb-2 w-50">
           <label for="exampleInputEmail1" class="form-label">Llave secreta</label>
-          <input type="text" class="form-control" id="secretKey" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="secretKey" name="secretKey" aria-describedby="emailHelp">
         </div>
-        <button type="submit" class="btn btn-primary mt-5" id="buyButton">Guardar Cambios</button>
+        <button type="submit" class="btn btn-primary mt-5" name="submitWebmasterInfo" id="submitWebmasterInfo">Guardar Cambios</button>
       </form>
     </article>
+
   </body>
     <!-- Incluye Culqi Checkout en tu sitio web-->
   <script src="https://checkout.culqi.com/js/v3"></script>
   <script>
-
-
   </script>
 </html>
+

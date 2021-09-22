@@ -28,6 +28,15 @@ function Activation() {
         PRIMARY KEY (`DonacionId`));";
 
     $wpdb->query($sql);
+
+	$settingsTable = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}settings(
+        `SettingsId` INT NOT NULL AUTO_INCREMENT,
+		`SecretKey` VARCHAR(40) NOT NULL,
+		`PublicKey` VARCHAR(40) NULL,
+		`OrgName` VARCHAR(40) NULL,
+        PRIMARY KEY (`SettingsId`));";
+
+    $wpdb->query($settingsTable);
 }
 
 function Deactivation() {
@@ -80,63 +89,22 @@ function ShortcodeDonation($atts) {
   $title = $atts['title'];
 
   $html = $_short->formulario($title);
+  
   return $html;
 
-    
-    
 }
-   // add_action('wp_enqueue_scripts', 'dcms_insertar_js');
+// if(isset($_POST['submit'])){
+// 	$campos = array("Monto"=>$_POST['importe'], "Nombre"=>$_POST['your_name'], "Email"=>$_POST['your_email'], "Telefono"=>$_POST['phone']);
+// 	$tabla = "wp_donaciones";//Tabla en base de datos
+// 	$wpdb->insert($tabla,$campos);
 
-		// PRUEBA AJAX
-    // add_action('wp_enqueue_scripts', 'dcms_insertar_js');
-    // function dcms_insertar_js(){
-    //     if (!is_home()) return;
-    //     wp_register_script('dcms_miscript', get_template_directory_uri() .'/js/script.js', array('jquery'));
-    //     wp_enqueue_script('dcms_miscript');
+// }
 
-    //     wp_localize_script('dcms_miscript', 'dcms_vars', ['ajaxurl'=>admin_url('admin-ajax.php')])
-    // }
-
-
-	// if(isset($_POST["submit01"])){
-	// 	error_log("línea 95");
-
-	// 	//Cargamos Requests y Culqi PHP
-	// 	include_once dirname(__FILE__).'/Requests/library/Requests.php';
-	// 	Requests::register_autoloader();
-	// 	include_once dirname(__FILE__).'/culqi-php/lib/culqi.php';
-	
-	// 	error_log("línea 22");
-	
-	// 	// Configurar tu API Key y autenticación
-	// 	// $SECRET_KEY = "pk_test_87a7198984bae065";
-	// 	// $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
-	
-	// 	// // Creando cargo
-	// 	// $charge = $culqi->Charges->create(
-	// 	// 	array(
-	// 	// 		"amount" => $_POST['amount2'],
-	// 	// 		"currency_code" => "PEN",
-	// 	// 		"email" => $_POST['email2'],
-	// 	// 		"source_id" => $_POST['token'],
-	// 	// )
-	// 	//    );
-	// 	// $dataM = array(
-	// 	// 	"amount" => $_POST['amount2'],
-	// 	// 	"currency_code" => "PEN",
-	// 	// 	"description" => $_POST['description2'],
-	// 	// 	"email" => $_POST['email2'],
-	// 	// 	"source_id" => $_POST['token'],
-	// 	// );
-	
-	// 	// echo $dataM;
-	// 	// Creando cargo
-	// 	$charge = $culqi->Charges->create($dataM);
-	
-	// 	echo '¡Donación Exitosa!';
-	
-	// 	//Respuesta
-	// 	// print_r($charge);
-	// }
+//enviando información del Webmaster
+if(isset($_POST['submitWebmasterInfo'])){
+$webmasterData = array("SecretKey"=>$_POST['secretKey'], "PublicKey"=>$_POST['publicKey'], "OrgName"=>$_POST['orgName']);
+$tabla = "wp_settings";//Tabla en base de datos
+$wpdb->insert($tabla,$webmasterData);
+}
 
 ?>

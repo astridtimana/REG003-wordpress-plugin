@@ -2,7 +2,9 @@
 
 class shortCode{
 
+  
   public function formulario($atts){
+
     
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
 
