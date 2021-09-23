@@ -108,17 +108,6 @@ $wpdb->insert($tabla,$webmasterData);
 }
 
 
-// $result = $wpdb->get_results ( "
-//   SELECT * 
-//   FROM  $wpdb-> $settings
-// " );
-
-// foreach ( $result as $key )
-// {
-//   echo $key;
-// }
-
-
 
 
 ?>
