@@ -3,30 +3,37 @@
 class shortCode{
 
   public function formulario($atts){
+
+    global $wpdb;
+    $results= $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
+    echo $results;
     
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
-
-    error_log("shortcode");   
+    $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
   
     return '
     <html>
     <head>
+    <link rel="stylesheet" type="text/css" href="'. $styletUrl .'">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-      <div class="donation-plugin-modal" style="display: block; background: #362277; padding: 20px; border-radius: 10px; width:30%">
+      <div class="donation-plugin-modal" >
       <h2 style="color:#e13e3f; text-align:center">'
           . $atts .
           '</h2><br/>
           <form method="post" style="text-align: center;">
-          <input type="number" id="amount" name="importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 100%"/><br /><br />
-          <input type="text" id="name" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
-          <input type="email" id="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 100%" /><br /><br />
-          <input type="number" id="phone" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
-          <input type="text" id="description" name="description" placeholder="Concepto de donación" style="border-radius: 10px; border: none;  outline: none; width: 100%" /><br /><br />
-          <input type="submit" id="buyButton" name="submit" value="DONAR" style="border-radius: 10px; border: none; color: #362277; font-weight: bolder;background: #abe1c1;  outline: none ; width: 100%" /><br /><br />
+          <input type="number" id="amount" name="importe" placeholder="Monto a aportar" class="inputFormClient" /><br /><br />
+          <input class="inputFormClient" type="text" id="name" name="your_name" placeholder="Nombre completo" class="inputFormClient"/><br /><br />
+          <input type="email" id="email" name="your_email" placeholder="Email" class="inputFormClient"/><br /><br />
+          <input type="number" id="phone" name="phone" placeholder="Número de teléfono" class="inputFormClient"/><br /><br />
+          <input type="text" id="description" name="description" placeholder="Concepto de donación" class="inputFormClient"/><br /><br />
+          <input type="submit" id="buyButton" name="submit" value="DONAR" /><br /><br />
       </form>
       <script>
+      const tokenKeys = JSON.parse(localStorage.getItem("tokenKey"));
+      const tokenPublicKey = atob(Object.values(tokenKeys)[2]);
+
       if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
       }
@@ -44,7 +51,7 @@ class shortCode{
         dp_phone = document.getElementById("phone").value;
         dp_description = document.getElementById("description").value;
         // Configura tu llave pública
-        Culqi.publicKey = "sk_test_7d9f4a5fe70f8315";
+        Culqi.publicKey = tokenPublicKey ;
         // Configura tu Culqi Checkout
         Culqi.settings({
             title: "Culqi Store",
@@ -70,7 +77,8 @@ class shortCode{
                 description: dp_description,
                 amount: dp_amount,
                 token: token,
-                email: email
+                email: email,
+                tokenPublicKey: tokenPublicKey
               }
             }).done(function(resp){
               alert(resp);

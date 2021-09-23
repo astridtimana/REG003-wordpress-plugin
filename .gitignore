@@ -6,6 +6,7 @@
 !/html/wp-content/plugins
 /html/wp-content/plugins/*
 !/html/wp-content/plugins/wordpressProject
+
 /logs/*
 
 
