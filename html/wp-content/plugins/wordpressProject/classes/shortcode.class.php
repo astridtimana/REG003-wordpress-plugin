@@ -5,10 +5,13 @@ class shortCode{
   
   public function formulario($atts){
 
+    global $wpdb;
+    $results= $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
+    echo $results;
     
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
 
-    error_log("shortcode");   
+    // error_log("shortcode");   
   
     return '
     <html>
@@ -46,7 +49,7 @@ class shortCode{
         dp_phone = document.getElementById("phone").value;
         dp_description = document.getElementById("description").value;
         // Configura tu llave pública
-        Culqi.publicKey = "sk_test_7d9f4a5fe70f8315";
+        Culqi.publicKey ="'. $results.'" ;
         // Configura tu Culqi Checkout
         Culqi.settings({
             title: "Culqi Store",

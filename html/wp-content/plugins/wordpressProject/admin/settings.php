@@ -17,7 +17,7 @@
       <form method="post">
         <div class="mb-2 w-50">
           <label for="exampleInputEmail1" class="form-label">Nombre de la organización</label>
-          <input type="text" class="form-control" id="organizationName" name="orgName"aria-describedby="name">
+          <input type="text" class="form-control" id="organizationName" name="orgName" aria-describedby="name">
         </div>
         <div class="mb-2 w-50">
           <label for="exampleInputEmail1" class="form-label">Llave pública</label>
@@ -37,4 +37,3 @@
   <script>
   </script>
 </html>
-
