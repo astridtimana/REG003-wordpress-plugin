@@ -71,25 +71,15 @@ class shortCode{
                       url: "'. $paymentUrl .'",
                       type: "POST",
                       data: {
+                        name: dp_name,
+                        phone: dp_phone,
                         description: dp_description,
                         amount: dp_amount,
                         token: token,
                         email: email
                       }
                     }).done(function(resp){
-                      //<?php
-                      //global $wpdb;
-                      //if(isset($_POST["submit"])){
-                      // 	$campos = array(
-                      //     "Monto"=>$_POST["dp_amount"], 
-                      //     "Nombre"=>$_POST["dp_name"], 
-                      //     "Email"=>$_POST["dp_email"], 
-                      //     "Telefono"=>$_POST["dp_phone"]);
-                      //	$tabla = "wp_donaciones";//Tabla en base de datos
-                      // 	$wpdb->insert($tabla,$campos);
-                      
-                      //}
-                      ?>
+                     
                       alert(resp);
                     });
                 } else { // ¡Hubo algún problema!
