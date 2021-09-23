@@ -2,6 +2,7 @@
 
 class shortCode{
 
+  
   public function formulario($atts){
 
     global $wpdb;
@@ -51,7 +52,8 @@ class shortCode{
         dp_phone = document.getElementById("phone").value;
         dp_description = document.getElementById("description").value;
         // Configura tu llave pública
-        Culqi.publicKey = tokenPublicKey ;
+        //Culqi.publicKey = tokenPublicKey ;
+        Culqi.publicKey ="'. $results.'" ;
         // Configura tu Culqi Checkout
         Culqi.settings({
             title: "Culqi Store",

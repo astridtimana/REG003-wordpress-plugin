@@ -18,9 +18,9 @@ services:
     image: phpmyadmin
     container_name: phpmyadmin
     restart: always
-    ports:
+    ports: 
       - 8899:80
-    environment:
+    environment: 
       - PMA_ARBITRARY=1
 
   wordpress:
