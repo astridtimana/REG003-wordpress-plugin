@@ -1,9 +1,10 @@
 <?php  
     $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
     //Cambiar el SettingsId según la posición de tu tabla
-    $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
-    $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
-    $OrgName = $wpdb->get_var("SELECT `OrgName` FROM `wp_settings` WHERE `SettingsId`= 2 ");
+    $index = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1");
+    $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
+    $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= $index  ");
+    $OrgName = $wpdb->get_var("SELECT `OrgName` FROM `wp_settings` WHERE `SettingsId`= $index  ");
 
     echo '
     <!DOCTYPE html>
@@ -53,7 +54,6 @@
         <script src="https://checkout.culqi.com/js/v3"></script>
         <script>
          const secretKeyDB = "'. $results .'";
-         console.log(secretKeyDB);
           $("#btn-edit").click(function(){  
             $("#container_primary").css({ display: "block" });
             $("#container_secondary").css({ display: "none" });

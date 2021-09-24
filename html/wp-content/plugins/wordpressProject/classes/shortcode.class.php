@@ -7,8 +7,9 @@ class shortCode{
 
     //Cambiar el SettingsId según la posición de tu tabla
     global $wpdb;
-    $results= $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
-    
+    $index = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1");
+    $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
+
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
     $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
   
@@ -76,11 +77,12 @@ class shortCode{
               data: {
                 description: dp_description,
                 amount: dp_amount,
+                amount2:dp_amount/100,
                 token: token,
                 email: email,
                 phone: dp_phone,
                 name: dp_name,
-                tokenPublicKey: "'. $results.'"
+                tokenSecretKey: "'. $results.'"
               }
             }).done(function(resp){
               alert(resp);
