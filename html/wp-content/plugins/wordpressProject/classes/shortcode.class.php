@@ -5,8 +5,9 @@ class shortCode{
   
   public function formulario($atts){
 
+    //Cambiar el SettingsId según la posición de tu tabla
     global $wpdb;
-    $results= $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
+    $results= $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
     
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
     $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
@@ -77,6 +78,8 @@ class shortCode{
                 amount: dp_amount,
                 token: token,
                 email: email,
+                phone: dp_phone,
+                name: dp_name,
                 tokenPublicKey: "'. $results.'"
               }
             }).done(function(resp){

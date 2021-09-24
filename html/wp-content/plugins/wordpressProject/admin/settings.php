@@ -1,8 +1,9 @@
 <?php  
     $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
-    $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
-    $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
-    $OrgName = $wpdb->get_var("SELECT `OrgName` FROM `wp_settings` WHERE `SettingsId`= 1 ");
+    //Cambiar el SettingsId según la posición de tu tabla
+    $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
+    $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
+    $OrgName = $wpdb->get_var("SELECT `OrgName` FROM `wp_settings` WHERE `SettingsId`= 2 ");
 
     echo '
     <!DOCTYPE html>
