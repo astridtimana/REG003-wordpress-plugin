@@ -93,12 +93,7 @@ function ShortcodeDonation($atts) {
   return $html;
 
 }
-// if(isset($_POST['submit'])){
-// 	$campos = array("Monto"=>$_POST['importe'], "Nombre"=>$_POST['your_name'], "Email"=>$_POST['your_email'], "Telefono"=>$_POST['phone']);
-// 	$tabla = "wp_donaciones";//Tabla en base de datos
-// 	$wpdb->insert($tabla,$campos);
 
-// }
 
 //enviando información del Webmaster
 if(isset($_POST['submitWebmasterInfo'])){

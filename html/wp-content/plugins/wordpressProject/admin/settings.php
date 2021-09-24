@@ -1,8 +1,8 @@
 <?php  
     $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
     $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
-    $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
-    $OrgName = $wpdb->get_var("SELECT `OrgName` FROM `wp_settings` WHERE `SettingsId`= 2 ");
+    $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
+    $OrgName = $wpdb->get_var("SELECT `OrgName` FROM `wp_settings` WHERE `SettingsId`= 1 ");
 
     echo '
     <!DOCTYPE html>
@@ -40,61 +40,45 @@
             <button class="btn btn-secondary mt-5" id="cancel_button_edit" style="display:none">Cancelar</button>
           </form>
         </article>
-
-
         <article id ="container_secondary" style="display:none">
           <h1>Configuración</h1>
           <div class="icons">
             <a id="btn-edit" class="btn btn-warning btn-xs" title="Edit"><i class="fa-solid fa-pen-to-square"></i></a>
           </div>
-
           <p>Nombre de la organización : <span>"</span><span id="organizationNameText"></span><span>"</span></p>
           <p>Llave pública : <span>"</span><span id="publicKeyText"></span><span>"</span></p>
           <p>Llave secreta : <span>"</span><span id="secretKeyText"></span><span>"</span></p>
         </article>
-
-
         <script src="https://checkout.culqi.com/js/v3"></script>
         <script>
-
          const secretKeyDB = "'. $results .'";
          console.log(secretKeyDB);
-
           $("#btn-edit").click(function(){  
             $("#container_primary").css({ display: "block" });
             $("#container_secondary").css({ display: "none" });
             $("#cancel_button_edit").css({ display: "block"});
           });
-
           $("#btn-deleted").click(function(){
             //localStorage.removeItem("tokenKey");
             location.reload();
           });
-
           if(secretKeyDB){
             $("#container_primary").css({display: "none"});
             $("#container_secondary").css({ display: "flex" });
-
             // let organizationNameText = document.getElementById("organizationNameText");
             // let publicKeyText = document.getElementById("publicKeyText");
             // let secretKeyText = document.getElementById("secretKeyText");
-
             $("#organizationNameText").text("'. $OrgName .'")
             $("#publicKeyText").text("'. $PublicKey .'")
             $("#secretKeyText").text("'. $results .'")
-
-
             $("#submitWebmasterInfo").click(function(){
-
               // Captura de datos escrito en los inputs
               let organizationName = document.getElementById("organizationName").value;
               let publicKey = document.getElementById("publicKey").value;
               let secretKey = document.getElementById("secretKey").value;
-
               let hashOrganizationName = btoa(organizationName);
               let hashPublicKey = btoa(publicKey);
               let hashSecretKey = btoa(secretKey);
-
             });
     
           } else{

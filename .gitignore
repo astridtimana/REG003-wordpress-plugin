@@ -10,13 +10,9 @@
 
 /logs/*
 
-
-
-
 #logs
 /logs/*
 
-/logs/*
 #mysql
 /php-playground/*
 !/php-playground/hola.php

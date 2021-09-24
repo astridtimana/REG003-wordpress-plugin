@@ -7,7 +7,6 @@ class shortCode{
 
     global $wpdb;
     $results= $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 1 ");
-    echo $results;
     
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
     $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
@@ -32,9 +31,7 @@ class shortCode{
           <input type="submit" id="buyButton" name="submit" value="DONAR" /><br /><br />
       </form>
       <script>
-      const tokenKeys = JSON.parse(localStorage.getItem("tokenKey"));
-      const tokenPublicKey = atob(Object.values(tokenKeys)[2]);
-
+     
       if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
       }
@@ -80,7 +77,7 @@ class shortCode{
                 amount: dp_amount,
                 token: token,
                 email: email,
-                tokenPublicKey: tokenPublicKey
+                tokenPublicKey: "'. $results.'"
               }
             }).done(function(resp){
               alert(resp);
