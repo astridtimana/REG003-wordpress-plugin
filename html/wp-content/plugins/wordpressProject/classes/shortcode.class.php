@@ -1,17 +1,18 @@
 <?php
-
+//Define class_name
+//Each function will be called later, when needed
 class shortCode{
-
   
   public function formulario($atts){
 
-    //Cambiar el SettingsId según la posición de tu tabla
     global $wpdb;
+    //$index = get the last register from table "wp_settings"
     $index = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1");
-    $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
+    //$secretKey = get variable 'SecretKey'  from table "wp_settings" of the last register
+    $secretKey = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
 
-    $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" );
-    $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
+    $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" ); //path to ajax
+    $styletUrl =  plugins_url("wordpressProject/admin/styless.css", "" ); //path style file
   
     return '
     <html>
@@ -32,12 +33,13 @@ class shortCode{
           <input type="text" id="description" name="description" placeholder="Concepto de donación" class="inputFormClient"/><br /><br />
           <input type="submit" id="buyButton" name="submit" value="DONAR" /><br /><br />
       </form>
+
       <script>
      
       if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
       }
-    
+      // obtener los datos del formulario
       let dp_amount = "";
       let dp_name = "";
       let dp_email = "";
@@ -52,7 +54,7 @@ class shortCode{
         dp_description = document.getElementById("description").value;
         // Configura tu llave pública
         //Culqi.publicKey = tokenPublicKey ;
-        Culqi.publicKey ="'. $results.'" ;
+        Culqi.publicKey ="'. $secretKey.'" ;
         // Configura tu Culqi Checkout
         Culqi.settings({
             title: "Culqi Store",
@@ -70,7 +72,7 @@ class shortCode{
             let email = Culqi.token.email;
             //alert("Se ha creado un token:" + token);
             //En esta linea de codigo debemos enviar el "Culqi.token.id"
-            //hacia tu servidor con Ajax
+            //hacia tu servidor con Ajax debemos enviar todos los datos que usaremos
             $.ajax({
               url: "'. $paymentUrl .'",
               type: "POST",
@@ -82,7 +84,7 @@ class shortCode{
                 email: email,
                 phone: dp_phone,
                 name: dp_name,
-                tokenSecretKey: "'. $results.'"
+                tokenSecretKey: "'. $secretKey.'"
               }
             }).done(function(resp){
               alert(resp);
@@ -101,8 +103,6 @@ class shortCode{
       
     </html>
     ';
-
-        // isset -> evalua si una variable está definida - se ha mandado un formulario?
       
     }
   }

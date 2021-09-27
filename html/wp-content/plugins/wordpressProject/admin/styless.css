@@ -1,6 +1,7 @@
+/*Form Setting WebMaster*/
 #container_secondary {
     margin-top: 2em;
-    width: 70%;
+    width: 50%;
     flex-direction: column;
     background-color: #fff;
     padding: 20px;
@@ -26,13 +27,17 @@
     font-weight: 100;
     color: #0c4cfc;
 }
+
+
+/*Form ShortCode*/
+
+    /*inputs*/
 #amount, #email, #name, #phone, #description {
     border-radius: 10px; 
     border: none; 
     outline: none; 
     width: 100%;
 }
-
 #buyButton {
     border-radius: 10px; 
     border: none; 
