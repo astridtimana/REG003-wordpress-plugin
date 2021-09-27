@@ -7,9 +7,9 @@ class shortCode{
 
     global $wpdb;
     //$index = get the last register from table "wp_settings"
-      $index = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1";
+    $index = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1");
     //$secretKey = get variable 'SecretKey'  from table "wp_settings" of the last register
-      $secretKey = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
+    $secretKey = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
 
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" ); //path to ajax
     $styletUrl =  plugins_url("wordpressProject/admin/styless.css", "" ); //path style file

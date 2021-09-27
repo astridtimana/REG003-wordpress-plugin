@@ -1,3 +1,4 @@
+/*Form Setting WebMaster*/
 #container_secondary {
     margin-top: 2em;
     width: 50%;
@@ -26,13 +27,17 @@
     font-weight: 100;
     color: #0c4cfc;
 }
+
+
+/*Form ShortCode*/
+
+    /*inputs*/
 #amount, #email, #name, #phone, #description {
     border-radius: 10px; 
     border: none; 
     outline: none; 
     width: 100%;
 }
-
 #buyButton {
     border-radius: 10px; 
     border: none; 

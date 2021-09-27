@@ -1,8 +1,10 @@
 <?php  
-    $styletUrl =  plugins_url("wordpressProject/admin/styless.css", "" );
-    //Cambiar el SettingsId según la posición de tu tabla
+    $styletUrl =  plugins_url("wordpressProject/admin/styless.css", "" ); //path file style
+
+    //$index = get the last register from table "wp_settings"
     $index = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1");
-    $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
+    //$varaible_name = get variable 'Varaible_Name'  from table "wp_settings" of the last register
+    $secretKey = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
     $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= $index  ");
     $OrgName = $wpdb->get_var("SELECT `OrgName` FROM `wp_settings` WHERE `SettingsId`= $index  ");
 
@@ -53,7 +55,7 @@
         </article>
         <script src="https://checkout.culqi.com/js/v3"></script>
         <script>
-         const secretKeyDB = "'. $results .'";
+         const secretKeyDB = "'. $secretKey .'";
           $("#btn-edit").click(function(){  
             $("#container_primary").css({ display: "block" });
             $("#container_secondary").css({ display: "none" });
@@ -71,7 +73,7 @@
             // let secretKeyText = document.getElementById("secretKeyText");
             $("#organizationNameText").text("'. $OrgName .'")
             $("#publicKeyText").text("'. $PublicKey .'")
-            $("#secretKeyText").text("'. $results .'")
+            $("#secretKeyText").text("'. $secretKey .'")
             $("#submitWebmasterInfo").click(function(){
               // Captura de datos escrito en los inputs
               let organizationName = document.getElementById("organizationName").value;
