@@ -20,20 +20,20 @@ function Activation() {
     global $wpdb;
 
     $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}donaciones(
-        `DonacionId` INT NOT NULL AUTO_INCREMENT,
-        `Monto` INT NOT NULL,
-        `Nombre` VARCHAR(50) NULL,
-        `Email` VARCHAR(50) NULL,
-        `Telefono` INT NOT NULL,
+        `DonacionId` 	INT 			NOT NULL AUTO_INCREMENT,
+        `Monto` 		INT 			NOT NULL,
+        `Nombre` 		VARCHAR(50) 	NULL,
+        `Email` 		VARCHAR(50) 	NULL,
+        `Telefono` 		INT 			NOT NULL,
         PRIMARY KEY (`DonacionId`));";
 
     $wpdb->query($sql);
 
 	$settingsTable = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}settings(
-        `SettingsId` INT NOT NULL AUTO_INCREMENT,
-		`SecretKey` VARCHAR(40) NOT NULL,
-		`PublicKey` VARCHAR(40) NULL,
-		`OrgName` VARCHAR(40) NULL,
+        `SettingsId` 	INT 			NOT NULL AUTO_INCREMENT,
+		`SecretKey` 	VARCHAR(40)		NOT NULL,
+		`PublicKey` 	VARCHAR(40) 	NULL,
+		`OrgName` 		VARCHAR(40) 	NULL,
         PRIMARY KEY (`SettingsId`));";
 
     $wpdb->query($settingsTable);
@@ -97,9 +97,10 @@ function ShortcodeDonation($atts) {
 
 //enviando información del Webmaster
 if(isset($_POST['submitWebmasterInfo'])){
-$webmasterData = array("SecretKey"=>$_POST['secretKey'], "PublicKey"=>$_POST['publicKey'], "OrgName"=>$_POST['orgName']);
-$tabla = "wp_settings";//Tabla en base de datos
-$wpdb->insert($tabla,$webmasterData);
+	$webmasterData = array("SecretKey"=>$_POST['secretKey'], "PublicKey"=>$_POST['publicKey'], "OrgName"=>$_POST['orgName']);
+	$tabla = "wp_settings";//Tabla en base de datos
+	$wpdb->insert($tabla,$webmasterData);
+
 }
 
 

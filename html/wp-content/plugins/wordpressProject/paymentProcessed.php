@@ -10,7 +10,7 @@ try {
     include_once dirname(__FILE__).'/culqi-php/lib/culqi.php';
 
     // Configurar tu API Key y autenticación
-    $SECRET_KEY = $_POST['tokenPublicKey'];
+    $SECRET_KEY = $_POST['tokenSecretKey'];
     $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
 
     // Creando cargo
@@ -27,7 +27,7 @@ try {
     echo '¡Donación exitosa!';
 
     $campos = array(
-        "Monto"=>$_POST['amount'], 
+        "Monto"=>$_POST['amount2'], 
         "Nombre"=>$_POST['name'], 
         "Email"=>$_POST['email'], 
         "Telefono"=>$_POST['phone']);
