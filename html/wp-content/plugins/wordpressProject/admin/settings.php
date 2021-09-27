@@ -1,5 +1,5 @@
 <?php  
-    $styletUrl =  plugins_url("wordpressProject/admin/styles.css", "" );
+    $styletUrl =  plugins_url("wordpressProject/admin/styless.css", "" );
     //Cambiar el SettingsId según la posición de tu tabla
     $results = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");
     $PublicKey = $wpdb->get_var("SELECT `PublicKey` FROM `wp_settings` WHERE `SettingsId`= 2 ");

@@ -10,7 +10,7 @@ try {
     include_once dirname(__FILE__).'/culqi-php/lib/culqi.php';
 
     // Configurar tu API Key y autenticación
-    $SECRET_KEY = "sk_test_7d9f4a5fe70f8315";
+    $SECRET_KEY = $_POST['tokenPublicKey'];
     $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
 
     // Creando cargo

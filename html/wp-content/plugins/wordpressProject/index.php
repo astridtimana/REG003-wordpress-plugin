@@ -64,7 +64,7 @@ function CreateMenu() {
 		'Submenu 1',
 		'Historial de Donaciones',
 		'manage_options',
-		plugin_dir_path(__FILE__) . 'admin/history.php',
+		plugin_dir_path(__FILE__) . 'admin/tablaDonacion.php',
 		null,
 		'2'
 	);
