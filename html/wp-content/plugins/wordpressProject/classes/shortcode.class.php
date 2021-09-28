@@ -6,10 +6,10 @@ class shortCode{
   public function formulario($atts){
 
     global $wpdb;
-    //$index = get the last register from table "wp_settings"
-    $index = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1");
+    //$id = get the last register from table "wp_settings"
+    $id = $wpdb->get_var("SELECT * FROM `wp_settings` ORDER BY SettingsId DESC LIMIT 1");
     //$secretKey = get variable 'SecretKey'  from table "wp_settings" of the last register
-    $secretKey = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $index ");
+    $secretKey = $wpdb->get_var("SELECT `SecretKey` FROM `wp_settings` WHERE `SettingsId`= $id");
 
     $paymentUrl =  plugins_url("wordpressProject/paymentProcessed.php", "" ); //path to ajax
     $styletUrl =  plugins_url("wordpressProject/admin/styless.css", "" ); //path style file
@@ -21,19 +21,20 @@ class shortCode{
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-      <div class="donation-plugin-modal" >
-      <h2 style="color:#e13e3f; text-align:center">'
-          . $atts .
-          '</h2><br/>
-          <form method="post" style="text-align: center;">
-          <input type="number" id="amount" name="importe" placeholder="Monto a aportar" class="inputFormClient" /><br /><br />
-          <input class="inputFormClient" type="text" id="name" name="your_name" placeholder="Nombre completo" class="inputFormClient"/><br /><br />
-          <input type="email" id="email" name="your_email" placeholder="Email" class="inputFormClient"/><br /><br />
-          <input type="number" id="phone" name="phone" placeholder="Número de teléfono" class="inputFormClient"/><br /><br />
-          <input type="text" id="description" name="description" placeholder="Concepto de donación" class="inputFormClient"/><br /><br />
-          <input type="submit" id="buyButton" name="submit" value="DONAR" /><br /><br />
+      <div class="donation-plugin-modal" style="display: block; background: '. $atts['bg-color'] .' ; padding: 20px; border-radius: 10px; width:35%">
+      <h2 style="color:'. $atts['font-color'] .' ; font-size: 2rem; text-align:center; margin-bottom:30px">'
+        . $atts['title'] .
+      '</h2>
+      <form method="post" style="text-align: center; ">
+        <p style="color:'. $atts['font-color'] .' ; font-size: 0.7rem; margin-bottom:10px">*Transacción máxima de s/1000 por cada operación.*</p>
+        <input type="number" id="amount" name="importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px"/>
+        <input type="text" id="name" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px"/>
+        <input type="email" id="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "/>
+        <input type="number" id="phone" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "/>
+        <textarea type="text" id="description" name="description" placeholder="Concepto de donación" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "></textarea>
+        <input type="submit" id="buyButton" name="submit" value="DONAR" style="border-radius: 10px; border: none; color: #ffffff; font-weight: bolder; background: '. $atts['button-color'] .'; outline: none; width: 50%; padding: 3px 10px; font-size:16px; margin-bottom:25px" />
       </form>
-
+    </div>
       <script>
      
       if ( window.history.replaceState ) {
@@ -97,7 +98,6 @@ class shortCode{
       };
     
       </script>
-      </div>
       <script src="https://checkout.culqi.com/js/v3"></script>
       </body>
       

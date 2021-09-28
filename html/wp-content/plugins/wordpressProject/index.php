@@ -7,7 +7,7 @@ Description: Este un plugin para donación de dinero a organizaciones sin fines 
 Version: 0.0.1
 Requires at Least: 5.6.1
 Requires PHP: 7.4.14
-Author: Yessenia Vela & Carla Sánchez
+Author: Astrid Timaná & Mery Vera
 Licence: MIT
 */
 
@@ -65,6 +65,7 @@ register_deactivation_hook(__FILE__, 'Deactivation'); //wrdpss_function('_file_'
 			'manage_options', //capability
 			plugin_dir_path(__FILE__) . 'admin/mainpage.php', //menuSlug-path file
 			null, //functionName
+			plugin_dir_url(__FILE__) . 'admin/icon.png',
 			'1' //position
 		);
 	// #region----------------------Option Position #2-------------------
@@ -93,11 +94,16 @@ register_deactivation_hook(__FILE__, 'Deactivation'); //wrdpss_function('_file_'
 	// add_shortcode=> WordPress's function 'prefixing '
 	// wordpress_function('title_name_to_call' , 'function_name')
 	add_shortcode('ShortcodeDonate', 'ShortcodeDonation');
-	function ShortcodeDonation($atts) {
-		$_short = new shortCode; // call 'class'
-		$title = $atts['title']; //attributes
-		$html = $_short->formulario($title); // call function into class & add param
-		
+	function ShortcodeDonation($atts = array()){
+		$_short = new shortCode;
+		shortcode_atts(array(
+			'title' => '',
+			'bg-color' => '',
+			'button-color'=> '',
+			'font-color'=> ''
+		), $atts);
+	
+		$html = $_short->formulario($atts);
 		return $html;
 	}
 

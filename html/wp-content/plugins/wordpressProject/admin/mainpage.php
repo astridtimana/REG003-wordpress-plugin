@@ -70,11 +70,11 @@
             <section style="display:flex; flex-direction:column">
               <strong style="margin-bottom: 1em">Especificación </strong>
                 <p>Coloca el nombre a la empresa que deseas vincular</p>
-                <p>Coloca la llave píblica que deseas vincular</p>
+                <p>Coloca la llave pública que deseas vincular</p>
                 <p>Coloca la llave secretea que deseas vincular </p>
             </section>
           </div>
-          <p>*Es muy importante que ingreses datos que te brinde la plataforma Culqui*</p>
+          <p>*Es muy importante que ingreses datos que te brinde la plataforma Culqi*</p>
         </div>     
     </article>   
 
