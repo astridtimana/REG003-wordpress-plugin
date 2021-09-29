@@ -1,44 +1,32 @@
-# Plugin para WordPress
+# Donation Plugin
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Pistas, tips y lecturas complementarias](#6-pistas-tips-y-lecturas-complementarias)
-* [7. Apache, MySQL y PHP](#7-apache-mysql-php)
+* [1. Descripción](#1-preámbulo)
+* [2. Dependencias](#2-resumen-del-proyecto)
+* [3. Recursos de aprendizaje](#3-objetivos-de-aprendizaje)
+* [4. ¿Cómo instalar el plugin?](#4-consideraciones-generales)
+* [5. ¿Cuándo puedes usar el plugin?](#5-criterios-de-aceptación-mínimos-del-proyecto)
+* [6. Ejemplos de uso](#6-pistas-tips-y-lecturas-complementarias)
+* [7. ¿Cómo hacer el test?](#7-apache-mysql-php)
 
 ***
 
-## 1. Preámbulo
+## 1. Descripción
 
-Los sistemas de gestión de contenidos o CMS (Content Management Systems) son
-aplicaciones web que permiten a usuarios crear contenidos con una interfaz visual
-de manera rápida y sencilla sin necesidad de tener conocimientos previos en
-en programación. Entre los más utilizados están
-[WordPress(42.1%),
-Shopify(3.7%), Joomla(2.0%), Squarespace(1.7%) y
-Wix(1.7%)](https://w3techs.com/technologies/overview/content_management),
-según un estudio de 2021 de W3Techs.com.
+**Donation** es un plugin creado para WordPress. Su fin es facilitar colaboración 
+económica y de caridad a la causa por la que estés trabajando. ¿Tienes algún próposito
+o proyecto en el cual te gustaría recibir fondos de distintos donantes? Primero, es
+súper sencillo usando WordPress. Desarrollas tu página web, instalas *Donation* 
+(más adelante, te mostramos cómo), usas el shortcode y ¡listo!, el usuario final podrá
+ver formulario para hacer su donación.
 
-WordPress es uno de los CMS más utilizados en el mercado. Éste permite crear
-blogs personales u otro tipo de sitios web,
-como páginas corporativas, revistas,
-tiendas online, periodicos digitales, etc. Aquí te dejamos el sitio
-[WordPress Website Showcase](https://wordpress.org/showcase/)
-donde podrás encontrar otros ejemplos de uso que tiene la aplicación.
-Además WordPress es un
-sistema de software libre, gratuito, modular, y compatible con muchos plugins
-y temas, constantemente actualizado y con mejoras gracias a la comunidad de
-desarrolladores. El lenguaje en el que desarrollamos WordPress es PHP,
-que es el lenguaje de código abierto
-[más popular desde el lado del servidor (79.2%)](https://w3techs.com/technologies/overview/programming_language),
-según un estudio de W3Techs.com.
-y se usa principalmente para crear páginas webs dinámicas y aplicaciones.
+Este plugin usa la pasarela de pago [CULQI](https://docs.culqi.com/#/pagos/inicio) 
+para que los donantes tengan la seguridad de que las transacciones son seguras. Tal es
+así, que CULQI permite aceptar pagos en línea con diferentes tarjetas de crédito.  
 
-## 2. Resumen del proyecto
+
+## 2. Dependencias
 
 En este proyecto te invitamos a desarrollar un plugin para WordPress. Puedes
 proponer libremente la funcionalidad de tu plugin. Cuando tengas una idea más o
@@ -64,156 +52,6 @@ o es un plagio de uno post ya existente.
 ## 3. Objetivos de aprendizaje
 
 Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
-
-### PHP
-
-- [ ] **Tipos de datos primitivos en PHP**
-
-  <details><summary>Links</summary><p>
-
-  * [Booleanos en PHP](https://www.php.net/manual/es/language.types.boolean.php)
-  * [Números enteros (Integers) en PHP](https://www.php.net/manual/es/language.types.integer.php)
-  * [Números de punto flotante en PHP](https://www.php.net/manual/es/language.types.float.php)
-  * [Strings en PHP](https://www.php.net/manual/es/language.types.string.php)
-  * [Strings numéricas en PHP](https://www.php.net/manual/es/language.types.numeric-strings.php)
-</p></details>
-
-- [ ] **Arrays en PHP (arreglos)**
-
-  <details><summary>Links</summary><p>
-
-  * [Arrays en PHP (arreglos)](https://www.php.net/manual/es/language.types.array.php)
-</p></details>
-
-- [ ] **Objetos en PHP**
-
-  <details><summary>Links</summary><p>
-
-  * [Objetos en PHP](https://www.php.net/manual/es/language.types.object.php)
-  * [Programación Orientada a Objetos en PHP](https://www.php.net/manual/es/language.oop5.php)
-</p></details>
-
-- [ ] **Variables en PHP (declaración, asignación, ámbito)**
-
-  <details><summary>Links</summary><p>
-
-  * [Variables en PHP](https://www.php.net/manual/es/language.variables.php)
-</p></details>
-
-- [ ] **Estructuras de control en PHP (if, else, elseif, else if, while, do while, for)**
-
-  <details><summary>Links</summary><p>
-
-  * [Estructuras de control en PHP (if, else, elseif, else if, while, do while, for)](https://www.php.net/manual/es/language.control-structures.php)
-</p></details>
-
-- [ ] **Funciones en PHP (params, args, return)**
-
-  <details><summary>Links</summary><p>
-
-  * [Funciones en PHP](https://www.php.net/manual/es/language.functions.php)
-  * [Extensiones PHP relacionadas con variable y tipo](https://www.php.net/manual/es/refs.basic.vartype.php)
-</p></details>
-
-- [ ] **PHPUnit**
-
-  <details><summary>Links</summary><p>
-
-  * [PHPUnit](https://phpunit.de/getting-started/phpunit-9.html)
-</p></details>
-
-- [ ] **XDebug**
-
-  <details><summary>Links</summary><p>
-
-  * [XDebug](https://xdebug.org/)
-</p></details>
-
-- [ ] **Composer**
-
-  <details><summary>Links</summary><p>
-
-  * [Composer](https://getcomposer.org/doc/00-intro.md)
-</p></details>
-
-### WordPress
-
-- [ ] **Hooks: action y filter**
-
-  <details><summary>Links</summary><p>
-
-  * [Hooks: action y filter](https://developer.wordpress.org/plugins/hooks/)
-</p></details>
-
-- [ ] **Menús de administración**
-
-  <details><summary>Links</summary><p>
-
-  * [Administration Menus](https://developer.wordpress.org/plugins/administration-menus/)
-</p></details>
-
-- [ ] **ShortCodes**
-
-  <details><summary>Links</summary><p>
-
-  * [ShortCodes](https://developer.wordpress.org/plugins/shortcodes/)
-</p></details>
-
-- [ ] **Configuraciones**
-
-  <details><summary>Links</summary><p>
-
-  * [Settings](https://developer.wordpress.org/plugins/settings/)
-</p></details>
-
-- [ ] **Custom Post Types**
-
-  <details><summary>Links</summary><p>
-
-  * [Custom Post Types](https://developer.wordpress.org/plugins/post-types/)
-</p></details>
-
-- [ ] **Taxonomías**
-
-  <details><summary>Links</summary><p>
-
-  * [Taxonomies](https://developer.wordpress.org/plugins/taxonomies/)
-</p></details>
-
-- [ ] **Usuarios**
-
-  <details><summary>Links</summary><p>
-
-  * [Users](https://developer.wordpress.org/plugins/users/)
-</p></details>
-
-- [ ] **Cron**
-
-  <details><summary>Links</summary><p>
-
-  * [Cron](https://developer.wordpress.org/plugins/cron/)
-</p></details>
-
-- [ ] **WordPress REST API**
-
-  <details><summary>Links</summary><p>
-
-  * [WordPress REST API](https://developer.wordpress.org/rest-api/)
-</p></details>
-
-- [ ] **WordPress APIs**
-
-  <details><summary>Links</summary><p>
-
-  * [WordPress APIs](https://codex.wordpress.org/WordPress_APIs)
-</p></details>
-
-- [ ] **Publicar en WordPress Plugin Directory**
-
-  <details><summary>Links</summary><p>
-
-  * [WordPress Plugin Directory](https://developer.wordpress.org/plugins/wordpress-org/planning-your-plugin/)
-</p></details>
 
 ## 4. Consideraciones generales
 
@@ -261,37 +99,8 @@ Los archivos y el código que escribas en esta carpeta no afectarán a tu sitio 
 
 ### Funcionalidades mínimas
 
-Tu plugin como mínimo deberá:
+T
 
-* [Incluir una opción en el
-menú de administración de
-WordPress](https://developer.wordpress.org/plugins/administration-menus/).
-* [Ser configurado desde
-una página de configuración](https://developer.wordpress.org/plugins/settings/custom-settings-page/).
-* [Usar los hooks de activación
-y desactivación](https://developer.wordpress.org/plugins/plugin-basics/activation-deactivation-hooks/).
-* [Contar con algún método
-de desinstalación](https://developer.wordpress.org/plugins/plugin-basics/uninstall-methods/)
-* [Verificar los permisos del usuario
-al intentar ejecutar una acción](https://developer.wordpress.org/plugins/security/checking-user-capabilities/).
-* [Validar](https://developer.wordpress.org/plugins/security/data-validation/),
-[_limpiar_](https://developer.wordpress.org/plugins/security/securing-input/) y
-[_escapar_](https://developer.wordpress.org/plugins/security/securing-output/)
-la información ingresada por el usuario
-* Usar al menos una
-[API ofical de WordPress](https://codex.wordpress.org/WordPress_APIs)
-
-### jQuery / Vue.js / React / Angular
-
-Es común que para el desarrollo de la interfaz gráfica de un plugin de
-WordPress se use
-[jQuery](https://developer.wordpress.org/plugins/javascript/jquery/).
-Sin embargo, también es posible usar librerías como
-[React](https://dev.to/bobman38/how-to-use-react-inside-a-wordpress-application-49i)
-o [Vue.js](https://school.geekwall.in/p/rkPvlcoSV)
-o frameworks como [Angular](https://www.kevinleary.net/angularjs-wordpress-tutorial/).
-Te invitamos a que evalúes cada alternativa y decidas cúal es la más apropiada
-para ti.
 
 ### Modularización del código
 

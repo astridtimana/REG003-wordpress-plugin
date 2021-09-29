@@ -93,11 +93,15 @@ register_deactivation_hook(__FILE__, 'Deactivation'); //wrdpss_function('_file_'
 	// add_shortcode=> WordPress's function 'prefixing '
 	// wordpress_function('title_name_to_call' , 'function_name')
 	add_shortcode('ShortcodeDonate', 'ShortcodeDonation');
-	function ShortcodeDonation($atts) {
-		$_short = new shortCode; // call 'class'
-		$title = $atts['title']; //attributes
-		$html = $_short->formulario($title); // call function into class & add param
-		
+	function ShortcodeDonation($atts){
+		$_short = new shortCode;
+		extract( shortcode_atts( array(
+			'bgColor' => '',
+			'title' => '',
+			
+		), $atts ) );
+
+		$html = $_short->formulario($atts);
 		return $html;
 	}
 

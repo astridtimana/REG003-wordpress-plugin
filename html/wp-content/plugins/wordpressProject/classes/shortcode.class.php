@@ -21,19 +21,22 @@ class shortCode{
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-      <div class="donation-plugin-modal" >
-      <h2 style="color:#e13e3f; text-align:center">'
-          . $atts .
-          '</h2><br/>
-          <form method="post" style="text-align: center;">
-          <input type="number" id="amount" name="importe" placeholder="Monto a aportar" class="inputFormClient" /><br /><br />
-          <input class="inputFormClient" type="text" id="name" name="your_name" placeholder="Nombre completo" class="inputFormClient"/><br /><br />
-          <input type="email" id="email" name="your_email" placeholder="Email" class="inputFormClient"/><br /><br />
-          <input type="number" id="phone" name="phone" placeholder="Número de teléfono" class="inputFormClient"/><br /><br />
-          <input type="text" id="description" name="description" placeholder="Concepto de donación" class="inputFormClient"/><br /><br />
-          <input type="submit" id="buyButton" name="submit" value="DONAR" /><br /><br />
-      </form>
-
+      
+      <div class="donation-plugin-modal" style="display: block; background: #000000; padding: 20px; border-radius: 10px; width:35%">
+        <h2 style="color:#ffffff; font-size: 2rem; text-align:center; margin-bottom:30px">'
+          . $atts['title'] .
+        '</h2>
+        <form method="post" style="text-align: center; ">
+          <p style="color:#ffffff; font-size: 0.7rem; margin-bottom:10px">*Transacción máxima de s/1000 por cada operación.*</p>
+          <input type="number" id="amount" name="importe" placeholder="Monto a aportar" style="border-radius: 10px; border: none; outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px"/>
+          <input type="text" id="name" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px"/>
+          <input type="email" id="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "/>
+          <input type="number" id="phone" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "/>
+          <textarea type="text" id="description" name="description" placeholder="Concepto de donación" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "></textarea>
+          <input type="submit" id="buyButton" name="submit" value="DONAR" style="border-radius: 10px; border: none; color: #ffffff; font-weight: bolder; background: #3CB4E5; outline: none; width: 50%; padding: 3px 10px; font-size:16px; margin-bottom:25px" />
+        </form>
+      </div>
+      
       <script>
      
       if ( window.history.replaceState ) {
