@@ -16,8 +16,6 @@
             <th>Nombre</th>
             <th>Email</th>
             <th>Teléfono</th>
-            <th>ShortCode</th>
-            <th>Acciones</th>
         </thead>
 
         <tbody>
@@ -28,7 +26,7 @@
                     $monto = $value['Monto'];
                     $email = $value['Email'];
                     $telefono = $value['Telefono'];
-                    $shortcode = $value['ShortCode'];
+                    
                     echo"
                         <tr>
                             <td>$donacionId</td>
@@ -36,7 +34,6 @@
                             <td>$monto</td>
                             <td>$email</td>
                             <td>$telefono</td>
-                            <td>$shortcode</td>
                         </tr>
                     ";  
                 }
