@@ -23,7 +23,7 @@ Este plugin usa la pasarela de pago [CULQI](https://docs.culqi.com/#/pagos/inici
 para que los donantes tengan la seguridad de que las transacciones son seguras. Tal es
 así, que CULQI permite aceptar pagos en línea con diferentes tarjetas de crédito.  
 
-<img width="190" alt="culqi" src="https://user-images.githubusercontent.com/77126999/135352484-e40f39d3-573e-4622-80eb-8d47ade91e5a.png">
+![culqi](https://user-images.githubusercontent.com/77126999/135353200-f6fffbe7-7828-4fd9-b65d-e3af19342a3f.png)
 
 Por otro lado, una descripción corta del plugin es como sigue:
 
