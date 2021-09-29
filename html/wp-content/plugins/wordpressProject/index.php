@@ -71,7 +71,7 @@ register_deactivation_hook(__FILE__, 'Deactivation'); //wrdpss_function('_file_'
 	// #region----------------------Option Position #2-------------------
 		add_submenu_page(
 			plugin_dir_path(__FILE__) . 'admin/mainpage.php', //menuSlug
-			'Submenu 1',
+			'Historial de Donaciones',
 			'Historial de Donaciones', //menuTitle
 			'manage_options', //capability
 			plugin_dir_path(__FILE__) . 'admin/tablaDonacion.php', //menuSlug-path file
@@ -81,8 +81,8 @@ register_deactivation_hook(__FILE__, 'Deactivation'); //wrdpss_function('_file_'
 	// #region----------------------Option Position #3-------------------
 		add_submenu_page(
 			plugin_dir_path(__FILE__) . 'admin/mainpage.php',//menuSlug
-			'Submenu 2',
-			'Settings Culqi', //menuTitle
+			'Settings CULQI',
+			'Settings CULQI', //menuTitle
 			'manage_options', //capability
 			plugin_dir_path(__FILE__) . 'admin/settings.php', //menuSlug-path file
 			null,
