@@ -1,5 +1,6 @@
 # Donation Plugin
-![Wordpress_Blue_logo](https://user-images.githubusercontent.com/77126999/135352134-5d69b165-9346-4c59-806a-b0d7253c2e34.png)
+![WordPress-Logotipo-2003-2008](https://user-images.githubusercontent.com/77126999/135352319-59e78091-1227-415b-a75d-76306daaa169.jpg)
+
 ## Índice
 
 * [1. Descripción](#1-preámbulo)
@@ -21,6 +22,8 @@ ver formulario para hacer su donación.
 Este plugin usa la pasarela de pago [CULQI](https://docs.culqi.com/#/pagos/inicio) 
 para que los donantes tengan la seguridad de que las transacciones son seguras. Tal es
 así, que CULQI permite aceptar pagos en línea con diferentes tarjetas de crédito.  
+
+<img width="190" alt="culqi" src="https://user-images.githubusercontent.com/77126999/135352484-e40f39d3-573e-4622-80eb-8d47ade91e5a.png">
 
 Por otro lado, una descripción corta del plugin es como sigue:
 
@@ -55,20 +58,33 @@ Teniendo el plugin instalado en WordPress, podrás observar dentro del menú 3 o
 
 En las siguientes imágenes, te mostramos cómo hacer uso del plugin:
 
+![step1](https://user-images.githubusercontent.com/77126999/135352544-de10f932-40a6-482e-b5f4-5d6b478c9263.png)
 
+![step2](https://user-images.githubusercontent.com/77126999/135352578-9264eb25-9a42-4bfa-91f4-24e9bb9ef57d.png)
 
 ### 3.2. Historial de Donaciones
 
 Cuando una donación se ha efectuado a través del CULQI de forma **exitosa**, los datos del 
 formulario son almacenados en MySQL. Estos son reflados en la tabla de *Historial de Donaciones*.
 
+![historial](https://user-images.githubusercontent.com/77126999/135352603-5b359c11-4722-4e9a-a0e3-aa53f7e93dc8.png)
 
 ### 3.3. Settings de CULQI
 
 En este submenú, se colocan las llaves públicas y secretas de la cuenta asociada a CULQI.
 
+![settings culqi](https://user-images.githubusercontent.com/77126999/135352644-f06d9df9-5045-42ea-8dbe-46a2c990674f.png)
+
+Una vez colocada dichas llaves, cada vez que un donante ejecute un pago exitosamente irá hacia tu
+cuenta asociada.
 
 ## 4. Ejemplo de uso
 
+Un usuario decidió recaudar fondos para salvar el bosque. A continuación, se puede ilustrar cómo
+se muestra el formulario y la llamada al API de CULQI para ejecutar el pago.
+
+![pantalla](https://user-images.githubusercontent.com/77126999/135352773-74fe9efa-711c-4fc7-b33c-239c164ff054.png)
+
+![pantalla culqi](https://user-images.githubusercontent.com/77126999/135352795-6c0ac770-506a-4fb5-91b3-c3273c38c929.png)
 De forma muy sencilla, puedes observar cómo luce el plugin hacia el usuario final que será 
 un próximo donante.
