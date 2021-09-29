@@ -1,5 +1,5 @@
 # Donation Plugin
-![Wordpress_Blue_logo](https://user-images.githubusercontent.com/77126999/135351865-5eca6bbd-6ff7-4e29-871e-a6130032da91.png)
+![Wordpress_Blue_logo](https://user-images.githubusercontent.com/77126999/135352134-5d69b165-9346-4c59-806a-b0d7253c2e34.png)
 ## Índice
 
 * [1. Descripción](#1-preámbulo)
