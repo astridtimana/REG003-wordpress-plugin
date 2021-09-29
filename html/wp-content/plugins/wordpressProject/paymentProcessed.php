@@ -21,7 +21,7 @@ try {
             array(
                 "amount" => $_POST['amount'], // Price
                 "currency_code" => "PEN",     // Type  
-                "description" => $_POST['description'], // Description
+               // "description" => $_POST['description'], // Description
                 "email" => $_POST['email'], // Email
                 "source_id" => $_POST['token'] // Token valided client' transaction
                 )

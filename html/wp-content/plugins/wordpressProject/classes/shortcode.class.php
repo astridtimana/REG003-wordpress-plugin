@@ -31,8 +31,9 @@ class shortCode{
         <input type="text" id="name" name="your_name" placeholder="Nombre completo" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px"/>
         <input type="email" id="email" name="your_email" placeholder="Email" style="border-radius: 10px; border: none;  outline: none ; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "/>
         <input type="number" id="phone" name="phone" placeholder="Número de teléfono" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "/>
-        <textarea type="text" id="description" name="description" placeholder="Concepto de donación" style="border-radius: 10px; border: none;  outline: none; width: 90%; padding:3px 10px; font-size:16px; margin-bottom:25px "></textarea>
-        <input type="submit" id="buyButton" name="submit" value="DONAR" style="border-radius: 10px; border: none; color: #ffffff; font-weight: bolder; background: '. $atts['button-color'] .'; outline: none; width: 50%; padding: 3px 10px; font-size:16px; margin-bottom:25px" />
+        
+        
+        <input type="submit" id="buyButton" name="submit" value="DONAR" style="border-radius: 10px; border: none; color: black; font-weight: bolder; background: '. $atts['button-color'] .'; outline: none; width: 50%; padding: 3px 10px; font-size:16px; margin-bottom:25px" />
       </form>
     </div>
       <script>
@@ -52,7 +53,7 @@ class shortCode{
         dp_name = document.getElementById("name").value;
         dp_email = document.getElementById("email").value;
         dp_phone = document.getElementById("phone").value;
-        dp_description = document.getElementById("description").value;
+       
         // Configura tu llave pública
         //Culqi.publicKey = tokenPublicKey ;
         Culqi.publicKey ="'. $secretKey.'" ;
@@ -60,7 +61,7 @@ class shortCode{
         Culqi.settings({
             title: "Culqi Store",
             currency: "PEN",
-            description: dp_description,
+           
             amount: dp_amount,
         });
         // Abre el formulario con las opciones de Culqi.settings
@@ -78,7 +79,7 @@ class shortCode{
               url: "'. $paymentUrl .'",
               type: "POST",
               data: {
-                description: dp_description,
+               
                 amount: dp_amount,
                 amount2:dp_amount/100,
                 token: token,
