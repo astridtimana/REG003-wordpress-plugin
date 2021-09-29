@@ -35,7 +35,7 @@ Description: Este un plugin para donación de dinero a organizaciones sin fines 
 Version: 0.0.1
 Requires at Least: 5.6.1
 Requires PHP: 7.4.14
-Author: Astrid Timaná & Mery Vera
+Author: Yessenia Vela & Carla Sánchez
 Licence: MIT
 */
 ```
